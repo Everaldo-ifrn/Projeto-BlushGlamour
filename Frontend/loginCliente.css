@@ -74,6 +74,9 @@ fieldset >  h1 {
     color: rgb(91, 91, 250);
     text-align: center;
 }
+.esqueciSenha_enviar > a:hover {
+    color:  rgba(91, 91, 250, 0.596);
+}
 .esqueciSenha_enviar > input {
     width: 300px;
     height: 40px;
@@ -82,13 +85,56 @@ fieldset >  h1 {
     border: none;
     border-radius: 10px;
 }
+.esqueciSenha_enviar > input:hover {
+    background: linear-gradient(to bottom, #F9A8C8, #EACEF2);
+    transition-duration: 1s;
+}
+
 
 /*AQUI IREI MODELAR O BOTAO DE VOLTAR*/
+.botaoVoltar {
+    padding-top: 30px;
+}
 .botaoVoltar > a {
-    padding: 20px 50px;
-    background-color: white;
+    height: 50px;
+    width: 100px;
+    background-color: #F9A8C8;
     border-radius: 50px;
     margin-left: 30px;
     text-decoration: none;
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.botaoVoltar > a > i {
+    font-size: 30px;
+    color: white;
+}
+.botaoVoltar > a:hover  {
+    background-color: #EACEF2;
+    transition-duration: 1s;
+}
+
+
+
+
+
+/*AQUI IREI MODELAR A PARTE DO MOBILE*/
+
+/*MODELANDO: MAIN*/
+@media only screen and (max-width: 500px){
+    main {
+        background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+        max-width: 428px;
+        height: 926px;
+    }
+    .formulario {
+        max-width: 400px;
+        height: 700px;
+    }
+    .caixasDeTexto > input {
+        height: 40px;
+        width: 350px;
+    }
 }
