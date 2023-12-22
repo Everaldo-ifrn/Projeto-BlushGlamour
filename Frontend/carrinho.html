@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrinho</title>
+    <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css">
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="produtos/Logo-BlushGlamour.png" alt="">
+        </figure>
+    </header>
+    <nav>
+        <div id="barra-lateral">
+            <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
+            <div class="DadosPerfil">
+                <div class="imagemPerfil"><img src="imagens/produtos/felipe-galan.jpg" alt="" height="95px" width="95px"></div>
+                <p>nome do usuario</p>
+            </div>
+            <div class="conteuldoBarralateral">
+                <h1>BlushGlamour</h1>
+                <div><a href="">Home</a><i class="fa fa-home"></i></div>
+            </div>
+            <nav class="conteuldoBarralateral">
+                <h1>Categorias</h1>
+                <div><a href="">Bases</a><i class="fa-solid fa-chevron-right"></i></div>
+                <div><a href="">Paletas</a><i class="fa-solid fa-chevron-right"></i></div>
+                <div><a href="">Pinceis</a><i class="fa-solid fa-chevron-right"></i></div>
+                <div><a href="">Delineadores</a><i class="fa-solid fa-chevron-right"></i></div>
+                <div><a href="">Batons</a><i class="fa-solid fa-chevron-right"></i></div>
+                <div><a href="">Rimels</a><i class="fa-solid fa-chevron-right"></i></div>
+            </nav>
+            <div class="conteuldoBarralateral">
+                <h1>Açoes</h1>
+                <div><a href="">Login</a><i class="fa fa-user"></i></div>
+                <div><a href="">Logout</a><i class="fa-solid fa-right-to-bracket"></i></div>
+            </div>
+        </div>
+        <script src="barraLateral.js"></script>
+    </nav>
+    <main>
+        <section class="addProduto">
+            <figure>
+                <img src="produtos/Bases/baseBrunaTavares01-removebg-preview.png" alt="">
+            </figure>
+            <div class="produtoDescricao">
+                <div class="textoAddProduto">
+                    <h1>Base da Boca Rosa</h1>
+                    <h3>R$100</h3>
+                    <p>Quantidade: 3</p>
+                    <h2 class="valordoProduto">R$300,00</h2>
+                </div>
+                <div class="Valordiscard">
+                    <a href=""><i class="fa-solid fa-xmark"></i></a>
+                </div>
+            </div>
+        </section>
+        <section class="finalizarCompra">
+            <h2>Subtotal: R$ 300,00</h2>
+            <div class="lixeraFinalizar">
+                <a href=""><i class="fa-solid fa-trash"></i></a>
+                <a href=""><button type="button"><h2>Finalizar Compra</h2></button></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

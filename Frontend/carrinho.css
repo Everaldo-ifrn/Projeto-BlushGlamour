@@ -1,0 +1,258 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#barra-lateral {
+    width: 350px;
+    height: 1024px;
+    position: fixed;
+    top: 0;
+    left: -350px; /* Inicialmente, a barra lateral está fora da tela */
+    background-color: #ffffff;
+    color: #000000;
+    transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
+    display: flex;
+    flex-direction: column;
+}
+/*Aqui estou modelando a parte do perfil do usuario*/
+.DadosPerfil {
+    display: flex;
+    background-color:rgba(229, 94, 130, 1);
+    height: 120px;
+    width: 350px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.DadosPerfil > p {
+    margin-left: 20px;
+    color: white;
+    font-size: 20px;
+}
+.DadosPerfil > a {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.DadosPerfil > div > img {
+    border-radius: 100%;
+    margin-left: 20px;
+    border: 2px solid white;
+    
+}
+/*Aqui estou modelando a parte dos links*/
+.conteuldoBarralateral > h1 {
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-left: 5px;
+}
+.conteuldoBarralateral > div {
+    width: 350px;
+    border-bottom: 1px solid rgba(236, 202, 237, 1);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.conteuldoBarralateral > div > a {
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.conteuldoBarralateral > div > i {
+    color: rgba(229, 94, 130, 1);
+    margin-bottom: 10px;
+}
+.conteuldoBarralateral > div > a:hover {
+    color: rgba(229, 94, 130, 1);
+    transition-duration: 0.5s;
+}
+
+/*Botao de abrir a barra lateral*/
+#toggle-btn {
+    background-color: #d676ae;
+    height: 20px;
+    width: 40px;
+    border: none;
+    border-radius: 30px;
+}
+/*Botao de fechar barra lateral*/
+.botaSair {
+    background-color: rgba(229, 94, 130, 1);
+    width: 350px;
+    display: flex;
+    justify-content: end;
+}
+.botaSair > a {
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+   
+}
+
+/*setando toda a página*/
+
+main {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+}
+
+header {
+    margin: auto;
+    max-width: 1440px;
+    height: 100px;
+    position: relative;
+}
+
+footer {
+    margin: auto;
+    max-width: 1440px;
+    height: 400px;
+    background-color: #E55E82;
+   
+}
+
+
+header > figure > img {
+    width: 200px;
+    height: 124px;
+    margin-top: -5px;
+}
+
+/*setando tamanho da classe produtos*/
+
+.addProduto{
+    display: flex;
+    max-width: 1440px;
+    height: 250px;
+    gap: 17px;
+    align-items: center;
+    border-bottom: 1px solid #AEAEAE;
+}
+
+.addProduto > figure> img{
+    width: 200px;
+    
+}
+
+.textoAddProduto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.textoAddProduto > h1{
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 35px;
+    font-family: monospace;
+    
+}
+
+.valordoProduto {
+    width: 139px;
+    height: 40px;
+
+}
+
+.produtoDescricao {
+    display: flex;
+    width: 1103px;
+    height: 200px;
+    justify-content: space-between;
+}
+
+.produtoDescricao > a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+
+
+}
+
+.Valordiscard{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 96px;
+}
+
+.Valordiscard > a{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #E55E82;;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center; 
+    text-decoration: none;
+}
+
+.Valordiscard > a > i{
+    color: #ffffff;
+}
+
+.finalizarCompra {
+    width: 1440px;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+
+.lixeraFinalizar {
+    display: flex;
+    gap: 20px; 
+}
+
+.lixeraFinalizar > a > i{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: #E55E82;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    color: #ffffff;
+}
+
+.lixeraFinalizar > a > button{
+    width: 350px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #E55E82;
+    border: none;
+    
+}
+
+.lixeraFinalizar > a > button:hover{
+    background-color: #ffffff;
+    border: solid 1px #E55E82;
+    transition-duration: 1s;
+}
+
+
+
+.lixeraFinalizar > a > button > h2:hover{
+    color: #E55E82;
+}
+
+
+.lixeraFinalizar > a > button > h2 {
+    color: #ffffff;
+}
+
+
