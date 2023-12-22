@@ -3,8 +3,13 @@
     margin: 0;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: RedHatDisplay;
 }
+@font-face {
+    font-family: RedHatDisplay;
+    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+}
+
 /*Aqui irei modelar a barra lateral*/
 #barra-lateral {
     width: 350px;
