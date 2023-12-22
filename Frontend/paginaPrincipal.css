@@ -4,6 +4,7 @@
 }
 body {
     font-family: RedHatDisplay;
+    background-color: #E55E82;
 }
 @font-face {
     font-family: RedHatDisplay;
@@ -42,7 +43,6 @@ body {
     color: #ffffff;
     text-decoration: none;
 }
-
 .DadosPerfil > div > img {
     border-radius: 100%;
     margin-left: 20px;
@@ -66,7 +66,7 @@ body {
     margin-bottom: 12px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+   
 
 }
 .conteuldoBarralateral > div > a {
@@ -78,6 +78,8 @@ body {
 .conteuldoBarralateral > div > i {
     color: rgba(229, 94, 130, 1);
     margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 20px;
 }
 .conteuldoBarralateral > div > a:hover {
     color: rgba(229, 94, 130, 1);
@@ -86,11 +88,13 @@ body {
 
 /*Botao de abrir a barra lateral*/
 #toggle-btn {
-    background-color: #d676ae;
-    height: 20px;
+    background-color: white;
+    height: 40px;
     width: 40px;
     border: none;
-    border-radius: 30px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 20px;
 }
 /*Botao de fechar barra lateral*/
 .botaSair {
@@ -107,3 +111,69 @@ body {
     font-size: 20px;
    
 }
+
+
+
+/*AQUI IREI COMEÇAR MODELAR A PAGINA*/
+
+/*HEADER*/
+header {
+    margin: auto;
+    height: 120px;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+}
+.botao_logo {
+    display: flex;
+    align-items: center;
+}
+.carrinho_barraDePesquisa {
+    display: flex;
+    align-items: center;
+}
+.botao > button > i {
+    font-size: 30px;
+    color: #E55E82;
+}
+/*Aqui irei modelar a barra de pesquisa*/
+.barra_pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #AEAEAE;
+    border-radius: 50px;
+    margin-right: 30px;
+}
+.barra_pesquisa > i {
+    color: #E55E82;
+}
+.barra_pesquisa > input {
+  height: 30px;
+  width: 240px;
+  border-radius: 50px;
+  border: none;
+}
+
+/*aqui irei modelar o icone do carrinho*/
+.carrinho_compra {
+    display: flex;
+}
+.fa-cart-shopping {
+    font-size: 30px;
+    color: #E55E82;
+ }
+#carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color:#5ee55e;
+    border-radius: 100%;
+    margin-right: 30px;
+ }
