@@ -135,7 +135,7 @@ form > fieldset > h2 {
 
 /*AQUI IREI MODELAR A PARTE quando a tela estiver muito pequena*/
 
-@media only screen and (max-width: 850px){
+@media only screen and (max-width: 1000px){
     .formulario {
         max-width: 800px;
         height: 600px;

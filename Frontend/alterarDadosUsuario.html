@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlushGlamour-Cadastro</title>
-    <link rel="stylesheet" href="cadastroFornecedor.css">
+    <title>BlushGlamour alterar dados</title>
+    <link rel="stylesheet" href="alterarDadosUsuario.css">
     <link rel="stylesheet" href="font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <main>
         <div class="formulario">
             <section class="titulo">
-                <h1>Cadastrar-se</h1>
+                <h1>Alterar dados</h1>
                 <div class="botaoVoltar">
                     <a href="voltar"><i class="fa-solid fa-arrow-left-long"></i></a>
                 </div>
@@ -23,8 +23,8 @@
                     <h2>Informações pessoais</h2>
                     <label for="nome">Nome</label>
                     <input type="text" placeholder="Digite seu nome" name="nome" id="nome">
-                    <label for="cnpj">CNPJ</label>
-                    <input type="text" placeholder="Digite seu CNPJ" name="cnpj" id="cnpj">
+                    <label for="cpf">CPF</label>
+                    <input type="text" placeholder="Digite seu CPF" name="cpf" id="cpf">
                     <label for="email">Email</label>
                     <input type="text" placeholder="Digite seu Email"  name="email" id="email">
                     <label for="senha">Senha</label>
@@ -46,8 +46,12 @@
                     <input type="text" placeholder="Digite o nome do estado"  name="estado" id="estado"> 
                     <label for="Cep">CEP</label>
                     <input type="text" placeholder="Digite o CEP da sua cidade"  name="cep" id="cep">
-                    <input class="botaoEntrar" type="submit" name="Entrar">
+                    <div class="botoes">
+                        <input class="botao" type="submit" name="Cancelar" value="Cancelar">
+                        <input class="botao" type="submit" name="Confirmar" value="Confirmar">
+                    </div>
                 </fieldset>
+                
             </form>
         </div>
     </main>

@@ -4,7 +4,7 @@
 }
 body {
     font-family: RedHatDisplay;
-    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+    background-color: #E55E82;
 }
 @font-face {
     font-family: RedHatDisplay;
@@ -14,7 +14,7 @@ body {
 
 /*AQUI IREI MODELAR O MAIN*/
 main {
-    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+    background-color: #E55E82;
     max-width: 1440px;
     height: 1000px;
     margin: auto;
@@ -26,7 +26,7 @@ main {
     max-width: 1000px;
     height: 800px;
     border-radius: 10px;
-    background-image: url('imagens/Login_cadastro/Cadastro-usuario.png');
+    background-color: white;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 5px 5px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 60px;
 }
@@ -60,10 +60,8 @@ form > fieldset > h2 {
     margin-top: 10px;
     font-size: 30px;
     font-family: monospace;
-    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color:#E55E82 ;
+   
 }
 
 
@@ -78,10 +76,7 @@ form > fieldset > h2 {
     margin-top: 30px;
     font-size: 50px;
     font-family: monospace;
-    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+   color: #E55E82;
 }
 
 
@@ -112,24 +107,28 @@ form > fieldset > h2 {
 
 
 /*Aqui irei modelar o botao de entrar*/
-.botaoEntrar {
-    margin: auto;
-    margin-top: 200px;  
+.botoes {
+    display: flex;
 }
-.botaoEntrar {
-    width: 300px;
-    height: 40px;
-    background: linear-gradient(to bottom, #E55E82 ,#F9A8C8);
+.botao {
+    margin: auto;
+    margin-top: 200px;
+    margin-left: 15px; 
+}
+.botao {
+    width: 200px;
+    height: 60px;
+    background-color: #E55E82;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
 }
-.botaoEntrar:hover {
-    background: linear-gradient(to bottom, #E55E82, #E55E82);
+.botao:hover {
+    border: 1px solid #E55E82;
     transition-duration: 1s;
+    color: #E55E82;
+    background-color: white;
 }
-
-
 
 
 
@@ -139,7 +138,7 @@ form > fieldset > h2 {
 @media only screen and (max-width: 1000px){
     .formulario {
         max-width: 800px;
-        height: 600px;
+        height: 650px;
         background-image: url('imagens/Login_cadastro/fundo_branco.png');
     }
     /*AQUI IREI MODELAR O FORMULARIO*/
@@ -159,9 +158,11 @@ form > fieldset > h2 {
         font-size: 30px;
     }
     /*Aqui estou modelando os botoes*/
-    .botaoEntrar {
+    .botao {
         margin-top: 30px;  
-        margin-right: 48px;
+        margin-right: 20px;
+        height: 50px;
+        width: 150px;
     }
     .botaoVoltar > a {
         height: 50px;

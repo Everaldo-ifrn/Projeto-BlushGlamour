@@ -15,24 +15,24 @@ body {
 main {
     background: linear-gradient(to bottom, #F9A8C8, #E55E82);
     max-width: 1440px;
-    height: 1000px;
+    height: 903px;
     margin: auto;
     padding-top: 50px;
 
 }
 .formulario {
     margin: auto;
-    max-width: 1000px;
-    height: 800px;
+    max-width: 500px;
+    height: 700px;
     border-radius: 10px;
-    background-image: url('imagens/Login_cadastro/Login-fornecedores.png'); 
+    background-color: white;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 5px 5px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 60px;
 }
 
 /*AQUI IREI MODELAR O FORMULARIO*/
 form {
-    height: 800px;
+    height: 600px;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -45,8 +45,8 @@ fieldset {
     border: none;
 }
 fieldset >  h1 {
-    margin-top: 85px;
-    font-size: 90px;
+    margin-top: 300px;
+    font-size: 50px;
     font-family: monospace;
     background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
     background-clip: text;
@@ -55,10 +55,10 @@ fieldset >  h1 {
 }
 .caixasDeTexto {
     margin-bottom: 35px;
-    margin-top: 90px;
+    margin-top: 50px;
 }
 .caixasDeTexto > label {
- margin-bottom: 10px;   
+    margin-bottom: 10px;   
 }
 .caixasDeTexto > input {
     margin-bottom: 30px;
@@ -69,7 +69,7 @@ fieldset >  h1 {
 }
 
 .esqueciSenha_enviar {
-    margin-bottom: 260px;
+    margin-bottom: 300px;
 }
 .esqueciSenha_enviar > a {
     margin-bottom: 40px;
@@ -120,47 +120,6 @@ fieldset >  h1 {
     transition-duration: 1s;
 }
 
-
-
-/*AQUI IREI MODELAR A PARTE DO MOBILE*/
-@media only screen and (max-width: 1000px){
-
-    /*AQUI IREI MODELAR O FORMULARIO*/
-    .formulario {
-        max-width: 800px;
-        height: 600px;
-        background-image: url('imagens/Login_cadastro/loginFornnecedor-1000px.png'); 
-    }
-    fieldset {
-        margin-right: 80px;
-    }
-    fieldset >  h1 {
-        margin-top: 85px;
-        font-size: 80px;
-    }
-    .caixasDeTexto {
-        margin-bottom: 30px;
-        margin-top: 40px;
-    }
-    .caixasDeTexto > input {
-        margin-bottom: 20px;
-        height: 40px;
-        width: 300px;
-    }
-    .esqueciSenha_enviar {
-        margin-bottom: 400px;
-    }
-    .esqueciSenha_enviar > input {
-        width: 300px;
-        height: 40px;
-    }
-    .esqueciSenha_enviar > a {
-        margin-bottom: 30px;
-    }
-       
-}
-
-
 @media only screen and (max-width: 800px){
     main {
         max-width: 428px;
@@ -173,8 +132,5 @@ fieldset >  h1 {
     .caixasDeTexto > input {
         height: 40px;
         width: 350px;
-    }
-    fieldset {
-        margin-right: 0;
     }
 }

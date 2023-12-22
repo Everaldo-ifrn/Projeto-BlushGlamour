@@ -58,7 +58,7 @@ fieldset >  h1 {
     margin-top: 90px;
 }
 .caixasDeTexto > label {
- margin-bottom: 10px;   
+    margin-bottom: 10px;   
 }
 .caixasDeTexto > input {
     margin-bottom: 30px;
@@ -124,7 +124,43 @@ fieldset >  h1 {
 
 /*AQUI IREI MODELAR A PARTE DO MOBILE*/
 
-/*MODELANDO: MAIN*/
+@media only screen and (max-width: 1000px){
+
+    /*AQUI IREI MODELAR O FORMULARIO*/
+    .formulario {
+        max-width: 800px;
+        height: 600px;
+        background-image: url('imagens/Login_cadastro/loginUsuario-1000px.png'); 
+    }
+    fieldset {
+        margin-right: 80px;
+    }
+    fieldset >  h1 {
+        margin-top: 85px;
+        font-size: 80px;
+    }
+    .caixasDeTexto {
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+    .caixasDeTexto > input {
+        margin-bottom: 20px;
+        height: 40px;
+        width: 300px;
+    }
+    .esqueciSenha_enviar {
+        margin-bottom: 400px;
+    }
+    .esqueciSenha_enviar > input {
+        width: 300px;
+        height: 40px;
+    }
+    .esqueciSenha_enviar > a {
+        margin-bottom: 30px;
+    }
+       
+}
+
 @media only screen and (max-width: 800px){
     main {
         max-width: 428px;
@@ -137,5 +173,8 @@ fieldset >  h1 {
     .caixasDeTexto > input {
         height: 40px;
         width: 350px;
+    }
+    fieldset {
+        margin-right: 0;
     }
 }
