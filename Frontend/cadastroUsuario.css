@@ -119,13 +119,15 @@ form > fieldset > h2 {
 .botaoEntrar {
     width: 300px;
     height: 40px;
-    background: linear-gradient(to bottom, #E55E82 ,#F9A8C8);
+    background-color: #E55E82;
     color: white;
     border: none;
     border-radius: 10px;
 }
 .botaoEntrar:hover {
-    background: linear-gradient(to bottom, #E55E82, #E55E82);
+    background-color: white;
+    border: 1px solid #E55E82;
+    color: #E55E82;
     transition-duration: 1s;
 }
 
@@ -139,7 +141,7 @@ form > fieldset > h2 {
 @media only screen and (max-width: 1000px){
     .formulario {
         max-width: 800px;
-        height: 600px;
+        height: 650px;
         background-image: url('imagens/Login_cadastro/fundo_branco.png');
     }
     /*AQUI IREI MODELAR O FORMULARIO*/

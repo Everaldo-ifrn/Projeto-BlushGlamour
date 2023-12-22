@@ -84,13 +84,15 @@ fieldset >  h1 {
 .esqueciSenha_enviar > input {
     width: 300px;
     height: 40px;
-    background: linear-gradient(to bottom, #E55E82 ,#F9A8C8);
+   background-color: #E55E82;
     color: white;
     border: none;
     border-radius: 10px;
 }
 .esqueciSenha_enviar > input:hover {
-    background: linear-gradient(to bottom, #E55E82, #E55E82);
+    background-color: white;
+    border: 1px solid #E55E82;
+    color: #E55E82;
     transition-duration: 1s;
 }
 
