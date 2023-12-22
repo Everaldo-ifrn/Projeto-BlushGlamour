@@ -2,8 +2,15 @@
     padding: 0;
     margin: 0;
 }
-
+body {
+    font-family: RedHatDisplay;
+}
+@font-face {
+    font-family: RedHatDisplay;
+    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+}
 #barra-lateral {
+    z-index: 1;
     width: 350px;
     height: 1024px;
     position: fixed;
@@ -104,6 +111,7 @@
 
 main {
     max-width: 1440px;
+    height: 500px;
     margin: auto;
     position: relative;
 }
@@ -206,11 +214,12 @@ header > figure > img {
 }
 
 .finalizarCompra {
-    width: 1440px;
+    max-width: 1440px;
     height: 130px;
     display: flex;
     justify-content: space-between;
     margin-top: 7px;
+    align-items: center;
 }
 
 .lixeraFinalizar {
