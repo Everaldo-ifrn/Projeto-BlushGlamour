@@ -9,103 +9,141 @@ body {
     font-family: RedHatDisplay;
     src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
 }
-#barra-lateral {
-    z-index: 1;
-    width: 350px;
-    height: 1024px;
-    position: fixed;
-    top: 0;
-    left: -350px; /* Inicialmente, a barra lateral está fora da tela */
-    background-color: #ffffff;
-    color: #000000;
-    transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
-    display: flex;
-    flex-direction: column;
-}
-/*Aqui estou modelando a parte do perfil do usuario*/
-.DadosPerfil {
-    display: flex;
-    background-color:rgba(229, 94, 130, 1);
-    height: 120px;
-    width: 350px;
-    align-items: center;
-    padding-bottom: 10px;
-}
-.DadosPerfil > p {
-    margin-left: 20px;
-    color: white;
-    font-size: 20px;
-}
-.DadosPerfil > a {
-    margin-left: 20px;
-    color: #ffffff;
-    text-decoration: none;
-}
 
-.DadosPerfil > div > img {
-    border-radius: 100%;
-    margin-left: 20px;
-    border: 2px solid white;
-    
-}
-/*Aqui estou modelando a parte dos links*/
-.conteuldoBarralateral > h1 {
-    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-size: 30px;
-    margin-left: 5px;
-}
-.conteuldoBarralateral > div {
-    width: 350px;
-    border-bottom: 1px solid rgba(236, 202, 237, 1);
-    margin-bottom: 12px;
+
+header {
+    margin: auto;
+    height: 120px;
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease;
+}
+.botao_logo {
+    display: flex;
+    align-items: center;
+}
+.carrinho_barraDePesquisa {
+    display: flex;
+    align-items: center;
+}
+.botao > button > i {
+    font-size: 30px;
+    color: #E55E82;
+}
+/*Aqui irei modelar a barra de pesquisa*/
+.barra_pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #AEAEAE;
+    border-radius: 50px; 
+}
+.barraPesquisa_Botao {
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+}
+.barraPesquisa_Botao > button{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: #E55E82;
+    font-size: 20px;
+    color: white;
+    border: none;
+    margin-left: 5px;
+}
+.barraPesquisa_Botao > button:hover {
+    background-color: white;
+    border:1px solid #E55E82;
+    color: #E55E82;
+    transition-duration: 0.5s;
 
 }
-.conteuldoBarralateral > div > a {
-    text-decoration: none;
-    color: #000000;
-    margin-bottom: 10px;
+.barra_pesquisa > i {
+    color: #E55E82;
     margin-left: 10px;
 }
-.conteuldoBarralateral > div > i {
-    color: rgba(229, 94, 130, 1);
-    margin-bottom: 10px;
-}
-.conteuldoBarralateral > div > a:hover {
-    color: rgba(229, 94, 130, 1);
-    transition-duration: 0.5s;
+.barra_pesquisa > input {
+  height: 30px;
+  width: 240px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
 }
 
-/*Botao de abrir a barra lateral*/
-#toggle-btn {
-    background-color: #d676ae;
-    height: 20px;
-    width: 40px;
-    border: none;
-    border-radius: 30px;
-}
-/*Botao de fechar barra lateral*/
-.botaSair {
-    background-color: rgba(229, 94, 130, 1);
-    width: 350px;
+/*aqui irei modelar o icone do carrinho*/
+.carrinho_compra {
     display: flex;
-    justify-content: end;
 }
-.botaSair > a {
-    padding: 5px;
-    color: white;
-    margin-right: 10px;
-    text-decoration: none;
-    font-size: 20px;
-   
-}
+.fa-cart-shopping {
+    font-size: 30px;
+    color: #E55E82;
+ }
+#carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color:#5ee55e;
+    border-radius: 100%;
+    margin-right: 30px;
+ }
+
+ /*AQUI IREI MODELAR AS MEDIAS QUERIES*/
+ @media only screen and (max-width: 800px){
+    /*Aqui irei modelar o header*/
+    header {
+        flex-wrap: wrap-reverse;
+        height: 200px;  
+        align-items: center;
+    }
+    .carrinho_barraDePesquisa{
+        justify-content: space-between;
+        width: 800px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 270px;
+        height: 40px;
+    }
+    .barra_pesquisa > input {
+        height: 30px;
+        width: 240px;
+    }
+    /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 20px;
+    }
+ }
+
+
+
+ /*para telas mobiles*/
+ @media only screen and (max-width: 500px){
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 200px;
+        height: 40px;
+    }
+   /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 30px;
+    }
+ }
 
 /*setando toda a página*/
 
@@ -113,13 +151,6 @@ main {
     max-width: 1440px;
     height: 500px;
     margin: auto;
-    position: relative;
-}
-
-header {
-    margin: auto;
-    max-width: 1440px;
-    height: 100px;
     position: relative;
 }
 
@@ -132,13 +163,8 @@ footer {
 }
 
 
-header > figure > img {
-    width: 200px;
-    height: 124px;
-    margin-top: -5px;
-}
 
-/*setando tamanho da classe produtos*/
+/*setando tamanhos e modelando a section addProdutos*/
 
 .addProduto{
     display: flex;
@@ -213,6 +239,7 @@ header > figure > img {
     color: #ffffff;
 }
 
+/*modelando a section Finalizar compra*/
 .finalizarCompra {
     max-width: 1440px;
     height: 130px;
