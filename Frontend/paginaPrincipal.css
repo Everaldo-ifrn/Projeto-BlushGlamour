@@ -205,6 +205,185 @@ header {
  }
 
 
+/*MAIN*/
+main {
+    max-width: 1440px;
+    margin: auto;
+    background-color:white;
+}
+/*Aqui irei modelar a parte do anunciado do site*/
+.anunciado {
+    height: 450px;
+    max-width: 1440px;
+    background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPrinciapal.png');
+}
+@media only screen and (max-width: 1300px){
+    .anunciado{
+        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1300.png');
+        
+    }
+}
+@media only screen and (max-width: 1200px){
+    .anunciado{
+        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1200.png');
+        
+    }
+}
+@media only screen and (max-width: 1100px){
+    .anunciado{
+        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1100.png');
+        
+    }
+}
+@media only screen and (max-width: 1000px){
+    .anunciado{
+        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1000.png');
+        height: 350px;
+    }
+}
+@media only screen and (max-width: 850px){
+    .anunciado{
+        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_850.png');
+        height: 350px;
+    }
+}
+@media only screen and (max-width: 800px){
+    .anunciado{
+        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_800.png');
+        height: 350px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .anunciado{
+        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_500.png');
+        height: 350px;
+    }
+}
+
+
+/*Aqui irei modelar a parte do carrossel dos mais vendidos do site*/
+.TituloMaisVendidos {
+    font-size: 30px;
+    font-family: monospace;
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+
+.carrossel {
+    display: flex;
+    height: 500px;
+    max-width: 1440px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    overflow-x: visible;
+    white-space: nowrap;
+}
+.botoes {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*aqui irei modelar os cards*/
+.cardMaisVendido {
+    width: 350px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+    margin:0px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: auto;
+}
+   
+.TituloCard {
+    color: white;
+}
+.imgCard > img{
+   height: 250px;
+   width: 250px;
+}
+.Valor_Botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.Valor_Botao > button{
+    height: 60px;
+    width: 180px;
+    border-radius: 50px;
+    background-color: white;
+    color: #E55E82;
+    border: none;
+    font-size: 15px;
+    margin-top: 20px;
+}
+.Valor_Botao > button:hover{
+    border:1px solid white;
+    color: white;
+    transition-duration: 1s;
+    background-color: #E55E82;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -255,6 +434,6 @@ header {
     }
    /*aqui irei modelar o carrinho*/
     #carrinho {
-        margin-right: 30px;
+        margin-right: 20px;
     }
  }
