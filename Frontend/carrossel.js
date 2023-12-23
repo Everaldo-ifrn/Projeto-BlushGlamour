@@ -1,26 +1,20 @@
-JavaScript (carrossel.js)
 
 $(document).ready(function() {
-    const slide = $('.carousel-slide');
-    const cards = $('.carousel-slide .card');
-    const prevBtn = $('#prev');
-    const nextBtn = $('#next');
+    const slide = $('.carrossel');
+    const cardWidth = $('.cardMaisVendido').outerWidth(true);
+    let currentPosition = 0;
 
-    let currentIndex = 0;
-
-    nextBtn.click(function() {
-        currentIndex++;
-        if (currentIndex >= cards.length - 2) { // -2 porque estamos mostrando 3 cards de cada vez
-            currentIndex = cards.length - 3;
+    $('#next').click(function() {
+        if (currentPosition > -(cardWidth * 4)) { /* Exibir 5 cards de uma vez */
+            currentPosition -= cardWidth;
+            slide.css('transform', `translateX(${currentPosition}px)`);
         }
-        slide.css('transform', `translateX(-${currentIndex * (100 / 3)}%)`);
     });
 
-    prevBtn.click(function() {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = 0;
+    $('#prev').click(function() {
+        if (currentPosition < 0) {
+            currentPosition += cardWidth;
+            slide.css('transform', `translateX(${currentPosition}px)`);
         }
-        slide.css('transform', `translateX(-${currentIndex * (100 / 3)}%)`);
     });
-});
+})

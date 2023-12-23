@@ -24,6 +24,7 @@ body {
     transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
     display: flex;
     flex-direction: column;
+    z-index: 3;
 }
 /*Aqui estou modelando a parte do perfil do usuario*/
 .DadosPerfil {
@@ -257,7 +258,7 @@ main {
 @media only screen and (max-width: 500px){
     .anunciado{
         background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_500.png');
-        height: 350px;
+        height: 300px;
     }
 }
 
@@ -274,13 +275,17 @@ main {
     margin-top: 50px;
     margin-bottom: 30px;
 }
+.MaisVendidos {
+    max-width: 1450px;
+    overflow: hidden;
+    position: relative;
+}
+
 .carrossel {
     display: flex;
-    height: 500px;
-    max-width: 1440px;
+    width: 1450px; /* 5 cards * 350px */
+    transition: transform 0.3s ease;
     margin-bottom: 100px;
-    display: flex;
-    justify-content: space-around;
   
 }
 .botoes {
@@ -288,16 +293,31 @@ main {
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     cursor: pointer;
+    background-color: #E55E82;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    font-size: 20px;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
 }
 
 /*aqui irei modelar os cards*/
 .cardMaisVendido {
-    width: 350px;
+    width: 300px;
     height: 450px;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Garante que os cards não diminuam mais do que o especificado */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -307,13 +327,23 @@ main {
     margin:0px 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 }
-   
+.cardMaisVendido:hover {
+    width: 320px;
+    height: 470px;
+    transition-duration: 1s;
+    background: linear-gradient(to bottom, #E55E82, #E55E82);
+}
+@media only screen and (max-width: 500px){
+    .cardMaisVendido {
+        margin-left: 65px;
+    }
+}
 .TituloCard {
     color: white;
 }
 .imgCard > img{
-   height: 250px;
-   width: 250px;
+   height: 200px;
+   width: 200px;
 }
 .Valor_Botao {
     display: flex;
@@ -337,47 +367,6 @@ main {
     transition-duration: 1s;
     background-color: #E55E82;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
