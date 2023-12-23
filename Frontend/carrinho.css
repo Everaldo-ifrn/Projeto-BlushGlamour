@@ -9,6 +9,110 @@ body {
     font-family: RedHatDisplay;
     src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
 }
+/*========================================= BARRA LATERAL============================================*/
+#barra-lateral {
+    width: 350px;
+    height: 1024px;
+    position: fixed;
+    top: 0;
+    left: -350px; /* Inicialmente, a barra lateral está fora da tela */
+    background-color: #ffffff;
+    color: #000000;
+    transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+/*Aqui estou modelando a parte do perfil do usuario*/
+.DadosPerfil {
+    display: flex;
+    background-color:rgba(229, 94, 130, 1);
+    height: 120px;
+    width: 350px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.DadosPerfil > p {
+    margin-left: 20px;
+    color: white;
+    font-size: 20px;
+}
+.DadosPerfil > a {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.DadosPerfil > div > img {
+    border-radius: 100%;
+    margin-left: 20px;
+    border: 2px solid white;
+    
+}
+/*Aqui estou modelando a parte dos links*/
+.conteuldoBarralateral > h1 {
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-left: 5px;
+}
+.conteuldoBarralateral > div {
+    width: 350px;
+    border-bottom: 1px solid rgba(236, 202, 237, 1);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+   
+
+}
+.conteuldoBarralateral > div > a {
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.conteuldoBarralateral > div > i {
+    color: rgba(229, 94, 130, 1);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.conteuldoBarralateral > div > a:hover {
+    color: rgba(229, 94, 130, 1);
+    transition-duration: 0.5s;
+}
+
+/*Botao de abrir a barra lateral*/
+#toggle-btn {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border: none;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+/*Botao de fechar barra lateral*/
+.botaSair {
+    background-color: rgba(229, 94, 130, 1);
+    width: 350px;
+    display: flex;
+    justify-content: end;
+}
+.botaSair > a {
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+   
+}
+/*=====================================FIM BARRA LATERAL============================================*/
+
+
 
 
 header {
@@ -23,6 +127,7 @@ header {
     top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: box-shadow 0.3s ease;
+    z-index: 1;
 }
 .botao_logo {
     display: flex;

@@ -128,6 +128,7 @@ header {
     top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: box-shadow 0.3s ease;
+    z-index: 1;
 }
 .botao_logo {
     display: flex;
@@ -273,9 +274,6 @@ main {
     margin-top: 50px;
     margin-bottom: 30px;
 }
-
-
-
 .carrossel {
     display: flex;
     height: 500px;
@@ -283,10 +281,7 @@ main {
     margin-bottom: 100px;
     display: flex;
     justify-content: space-around;
-    overflow: auto;
-    scroll-snap-type: x mandatory;
-    overflow-x: visible;
-    white-space: nowrap;
+  
 }
 .botoes {
     position: absolute;
@@ -298,7 +293,6 @@ main {
     border: none;
     cursor: pointer;
 }
-
 
 /*aqui irei modelar os cards*/
 .cardMaisVendido {
@@ -312,8 +306,6 @@ main {
     background: linear-gradient(to bottom, #F9A8C8, #E55E82);
     margin:0px 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: auto;
 }
    
 .TituloCard {
