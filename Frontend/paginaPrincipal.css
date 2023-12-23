@@ -1,3 +1,4 @@
+/*CONFIGURAÇOES GERAIS*/
 * {
     padding: 0;
     margin: 0;
@@ -11,7 +12,7 @@ body {
     src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
 }
 
-/*Aqui irei modelar a barra lateral*/
+/*========================================= BARRA LATERAL============================================*/
 #barra-lateral {
     width: 350px;
     height: 1024px;
@@ -111,11 +112,9 @@ body {
     font-size: 20px;
    
 }
-
-
+/*=====================================FIM BARRA LATERAL============================================*/
 
 /*AQUI IREI COMEÇAR MODELAR A PAGINA*/
-
 /*HEADER*/
 header {
     margin: auto;
@@ -125,6 +124,10 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease;
 }
 .botao_logo {
     display: flex;
@@ -146,17 +149,40 @@ header {
     width: 300px;
     height: 40px;
     border: 1px solid #AEAEAE;
-    border-radius: 50px;
+    border-radius: 50px; 
+}
+.barraPesquisa_Botao {
+    display: flex;
     margin-right: 30px;
+    align-items: center;
+}
+.barraPesquisa_Botao > button{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: #E55E82;
+    font-size: 20px;
+    color: white;
+    border: none;
+    margin-left: 5px;
+}
+.barraPesquisa_Botao > button:hover {
+    background-color: white;
+    border:1px solid #E55E82;
+    color: #E55E82;
+    transition-duration: 0.5s;
+
 }
 .barra_pesquisa > i {
     color: #E55E82;
+    margin-left: 10px;
 }
 .barra_pesquisa > input {
   height: 30px;
   width: 240px;
   border-radius: 50px;
   border: none;
+  outline: none;
 }
 
 /*aqui irei modelar o icone do carrinho*/
@@ -176,4 +202,59 @@ header {
     background-color:#5ee55e;
     border-radius: 100%;
     margin-right: 30px;
+ }
+
+
+
+
+
+
+
+
+
+
+ /*AQUI IREI MODELAR AS MEDIAS QUERIES*/
+ @media only screen and (max-width: 800px){
+    /*Aqui irei modelar o header*/
+    header {
+        flex-wrap: wrap-reverse;
+        height: 200px;  
+        align-items: center;
+    }
+    .carrinho_barraDePesquisa{
+        justify-content: space-between;
+        width: 800px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 270px;
+        height: 40px;
+    }
+    .barra_pesquisa > input {
+        height: 30px;
+        width: 240px;
+    }
+    /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 20px;
+    }
+ }
+
+
+
+ /*para telas mobiles*/
+ @media only screen and (max-width: 500px){
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 200px;
+        height: 40px;
+    }
+   /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 30px;
+    }
  }
