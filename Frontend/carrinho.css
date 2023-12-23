@@ -379,6 +379,8 @@ footer > img{
 .lixeraFinalizar {
     display: flex;
     gap: 20px; 
+    justify-content: center;
+    align-items: center;
 }
 
 .lixeraFinalizar > a > i{
