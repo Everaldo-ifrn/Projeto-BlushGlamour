@@ -337,6 +337,9 @@ main {
     .cardMaisVendido {
         margin-left: 65px;
     }
+    .cardMaisVendido:hover {
+        margin-left: 55px;
+    }
 }
 .TituloCard {
     color: white;
