@@ -308,7 +308,7 @@ main {
 
 /*Aqui irei modelar a parte do carrossel dos mais vendidos do site*/
 .TituloMaisVendidos {
-    font-size: 30px;
+    font-size: 40px;
     font-family: monospace;
     background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
     background-clip: text;
@@ -427,6 +427,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 
 }
 /*Conainer filho*/
@@ -443,7 +444,7 @@ main {
 }
 /*titulo*/
 .tituloEncontre_por_categoria > h1 {
-    font-size: 40px;
+    font-size: 50px;
     font-family: monospace;
     background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
     background-clip: text;
@@ -636,7 +637,7 @@ main {
     border: none;
 }
 
-.botao_comprar > button {
+.botao_comprar > input {
     width: 305px;
     height: 50px;
     color: white;
@@ -646,15 +647,12 @@ main {
     border-radius: 10px;
     background-color: #E55E82;
 }
-.botao_comprar > button:hover {
+.botao_comprar > input:hover {
     background-color: white;
     color: #E55E82;
     border: 1px solid #E55E82;
     transition-duration: 1s;
 }
-
-
-
 
 
 
@@ -664,7 +662,6 @@ main {
     max-width: 1440px;
     margin-top: 100px;
     margin-bottom: 100px;
-   
 }
 
 /*Container filho*/
@@ -676,7 +673,6 @@ main {
     justify-content: space-around;
     margin: auto;
     flex-wrap: wrap;
-
 }
 
 /*Container que tem p, h1 e button*/
@@ -696,7 +692,8 @@ main {
     justify-content: flex-end;
     border-radius: 10px;
     margin-bottom: 50px;
-
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .propaganda > div {
     max-width: 350px;
@@ -731,3 +728,68 @@ main {
     transition-duration: 1s;
 }
 
+@media only screen and (max-width: 800px){ 
+    #propaganda1 {
+        background-image: url("imagens/Pagina_principal_mobile/Propaganda2mobile.png");
+        
+    }
+    #propaganda2 {
+        background-image: url("imagens/Pagina_principal_mobile/Propaganda1mobile.png");
+    }
+    .propaganda {
+        height: 500px;
+        width: 420px;
+        margin-bottom: 30px;
+    }
+    .propaganda > div {
+        max-width: 250px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+    .propaganda > div > h1 {
+        font-size: 35px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .propaganda > div >  p {
+        height: 80px;
+        width: 250px;
+        font-size:20px;
+        margin-bottom: 90px;
+    }
+}
+
+
+
+/*FOOTER*/
+/*setando toda a página*/
+
+footer{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    height: 400px;
+    background: #E55E82; 
+}
+
+footer > img{
+    min-width: 150px;
+    max-width: 200px;
+    min-height: 125px;
+    max-height: 200px;
+}
+
+.icones_rodape{
+    display: flex;
+    width: 100%;
+    justify-content:end;
+    margin-right: 5%;
+}
+
+.icones_rodape > a{
+    font-size: 50px;
+    color: white;
+    margin-left: 29px;
+}
