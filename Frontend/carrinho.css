@@ -114,7 +114,7 @@ body {
 
 
 
-
+/*modelando o header*/
 header {
     margin: auto;
     height: 120px;
@@ -429,4 +429,20 @@ footer > img{
 
 .lixeira > i:hover {
     color: #E55E82;
+}
+
+/*modelando para telas max 800 de largura*/
+@media only screen and (max-width: 800px){
+    .textoAddProduto {
+        font-size: 80%;
+    }
+    .textoAddProduto > h1{
+        font-size: 30px;
+    }
+    .lixeraFinalizar > a > button{
+        width: 280px;
+        height: 50px;
+        font-size: 12px;
+    }
+
 }
