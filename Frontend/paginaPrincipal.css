@@ -658,5 +658,76 @@ main {
 
 
 
+/*Aqui irei modelar a parte das propaandas*/
+/*Conatiner pai*/
+.Propagandas {
+    max-width: 1440px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+   
+}
 
+/*Container filho*/
+.Propagandas_dos_produtos1_2 {
+    max-width: 1400px;
+    max-height: 2000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    flex-wrap: wrap;
+
+}
+
+/*Container que tem p, h1 e button*/
+#propaganda1 {
+    background-image: url("imagens/Pagina_principal/PRopaganda2-dekstop.png");
+    
+}
+#propaganda2 {
+    background-image: url("imagens/Pagina_principal/PRopaganda1-dekstop.png");
+}
+.propaganda {
+    height: 500px;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-radius: 10px;
+    margin-bottom: 50px;
+
+}
+.propaganda > div {
+    max-width: 350px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.propaganda > div > h1 {
+    font-size: 50px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.propaganda > div >  p {
+    height: 100px;
+    width: 400px;
+    font-size:20px;
+    color: white;
+}
+.propaganda > div > button {
+    width: 200px;
+    height: 75px;
+    color: #E55E82;
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+}
+.propaganda > div > button:hover{
+    background-color: #F9A8C8;
+    color:white;
+    border: 1px solid white;
+    transition-duration: 1s;
+}
 
