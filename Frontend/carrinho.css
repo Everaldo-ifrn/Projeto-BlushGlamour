@@ -304,7 +304,6 @@ footer > img{
 
 .addProduto > figure> img{
     width: 200px;
-    
 }
 
 .textoAddProduto {
@@ -374,6 +373,7 @@ footer > img{
     justify-content: space-between;
     margin-top: 7px;
     align-items: center;
+    
 }
 
 .lixeraFinalizar {
@@ -392,6 +392,14 @@ footer > img{
     height: 50px;
     border-radius: 50px;
     color: #ffffff;
+}
+
+.lixeraFinalizar > a{
+    margin-right: 20px;
+}
+
+.finalizarCompra > h2{
+    margin-left: 20px;
 }
 
 .lixeraFinalizar > a > button{
@@ -431,7 +439,7 @@ footer > img{
     color: #E55E82;
 }
 
-/*modelando para telas max 800 de largura*/
+/*modelando para telas max-width 800px*/
 @media only screen and (max-width: 800px){
     .textoAddProduto {
         font-size: 80%;
@@ -444,5 +452,36 @@ footer > img{
         height: 50px;
         font-size: 12px;
     }
+    .finalizarCompra > h2{
+        font-size: 23px;
+    }
 
+}
+
+/*modelando para telas max-width 500px*/
+@media only screen and (max-width: 500px){
+    .textoAddProduto > h1{
+        font-size: 25px;
+    
+    }
+    .lixeraFinalizar > a > button{
+        width: 270px;
+        height: 40px;
+        font-size: 10px;
+    }
+    .finalizarCompra{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    .barra_pesquisa {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 230px;
+        height: 35px;
+    }
+    
 }
