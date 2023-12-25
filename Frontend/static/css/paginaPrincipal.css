@@ -9,7 +9,9 @@ body {
 }
 @font-face {
     font-family: RedHatDisplay;
-    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+    /*UTILIZANDO SEM FLASK*/
+    src: url('C:/Users/joao felipe/OneDrive/Documents/ESCOLA-FELIPE/IFRN CURSO PROGRAMAÇA/Projeto-BlushGlamour/Frontend/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+    /*UTILIZANDO COM FLASK*/
 }
 
 /*========================================= BARRA LATERAL============================================*/
