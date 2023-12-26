@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>carrinho</title>
+    <title>pesquisa</title>
     <!--PARA MEXE QUANDO ESTIVER SEM O FLASK(VOCÊ DEVE COLOCAR O CAMINHO DO SEU COMPUTADOR PARA FAZER QUAISQUER CORREÇÕES)
     <link rel="stylesheet" href="carrinho.css">
     <link rel="stylesheet" href="font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css">
     -->
     <!--COM FLASK-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrinho.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/barradePesquisa.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='javaScript/carrossel.js') }}"></script>    
     <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
@@ -81,16 +81,11 @@
                 <div class="textoAddProduto">
                     <h1>Base da Boca Rosa</h1>
                     <h3>R$100</h3>
-                    <p>Quantidade: 3</p>
-                    <h2 class="valordoProduto">R$300,00</h2>
+                    <p>restam: 3</p>
                 </div>
-            </div>
-        </section>
-        <section class="finalizarCompra">
-            <h2>Subtotal: R$300,00</h2>
-            <div class="lixeraFinalizar">
-                <a class="lixeira" href=""><i class="fa-solid fa-trash"></i></a>
-                <a href=""><button type="button"><h2>Finalizar Compra</h2></button></a>
+                <div class="botaoProduto">
+                    <button  type="submit" ><a href=""><i class="fa-solid fa-arrow-right"></i></a></button>
+                </div>
             </div>
         </section>
     </main>
