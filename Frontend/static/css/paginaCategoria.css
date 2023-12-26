@@ -1,0 +1,401 @@
+/*CONFIGURAÇOES GERAIS*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    max-width: 1440px;
+    margin: auto;
+    background-color:white;
+}
+
+/*---------------------------- COMEÇO DO CODIGO DE JOÃO FELIPE----------------------------------*/
+
+body {
+    font-family: RedHatDisplay;
+    background-color: #E55E82;
+}
+@font-face {
+    font-family: RedHatDisplay;
+    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+}
+
+/*========================================= BARRA LATERAL============================================*/
+#barra-lateral {
+    width: 350px;
+    height: 1024px;
+    position: fixed;
+    top: 0;
+    left: -350px; /* Inicialmente, a barra lateral está fora da tela */
+    background-color: #ffffff;
+    color: #000000;
+    transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+}
+/*Aqui estou modelando a parte do perfil do usuario*/
+.DadosPerfil {
+    display: flex;
+    background-color:rgba(229, 94, 130, 1);
+    height: 120px;
+    width: 350px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.DadosPerfil > p {
+    margin-left: 20px;
+    color: white;
+    font-size: 20px;
+}
+.DadosPerfil > a {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.DadosPerfil > div > img {
+    border-radius: 100%;
+    margin-left: 20px;
+    border: 2px solid white;
+    
+}
+/*Aqui estou modelando a parte dos links*/
+.conteuldoBarralateral > h1 {
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-left: 5px;
+}
+.conteuldoBarralateral > div {
+    width: 350px;
+    border-bottom: 1px solid rgba(236, 202, 237, 1);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+   
+
+}
+.conteuldoBarralateral > div > a {
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.conteuldoBarralateral > div > i {
+    color: rgba(229, 94, 130, 1);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.conteuldoBarralateral > div > a:hover {
+    color: rgba(229, 94, 130, 1);
+    transition-duration: 0.5s;
+}
+
+/*Botao de abrir a barra lateral*/
+#toggle-btn {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border: none;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+/*Botao de fechar barra lateral*/
+.botaSair {
+    background-color: rgba(229, 94, 130, 1);
+    width: 350px;
+    display: flex;
+    justify-content: end;
+}
+.botaSair > a {
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+   
+}
+
+/*=====================================FIM BARRA LATERAL============================================*/
+
+/*AQUI IREI COMEÇAR MODELAR A PAGINA*/
+/*HEADER*/
+header {
+    margin: auto;
+    height: 120px;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease;
+    z-index: 3;
+}
+.botao_logo {
+    display: flex;
+    align-items: center;
+}
+.carrinho_barraDePesquisa {
+    display: flex;
+    align-items: center;
+}
+.botao > button > i {
+    font-size: 30px;
+    color: #E55E82;
+}
+/*Aqui irei modelar a barra de pesquisa*/
+.barra_pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #AEAEAE;
+    border-radius: 50px; 
+}
+.barraPesquisa_Botao {
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+}
+.barraPesquisa_Botao > button{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: #E55E82;
+    font-size: 20px;
+    color: white;
+    border: none;
+    margin-left: 5px;
+}
+.barraPesquisa_Botao > button:hover {
+    background-color: white;
+    border:1px solid #E55E82;
+    color: #E55E82;
+    transition-duration: 0.5s;
+
+}
+.barra_pesquisa > i {
+    color: #E55E82;
+    margin-left: 10px;
+}
+.barra_pesquisa > input {
+  height: 30px;
+  width: 240px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+
+/*aqui irei modelar o icone do carrinho*/
+.carrinho_compra {
+    display: flex;
+}
+.fa-cart-shopping {
+    font-size: 30px;
+    color: #E55E82;
+ }
+#carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color:#5ee55e;
+    border-radius: 100%;
+    margin-right: 30px;
+    
+ }
+ /*AQUI IREI MODELAR AS MEDIAS QUERIES*/
+ @media only screen and (max-width: 820px){
+    /*Aqui irei modelar o header*/
+    header {
+        flex-wrap: wrap-reverse;
+        height: 200px;  
+        align-items: center;
+    }
+    .carrinho_barraDePesquisa{
+        justify-content: space-between;
+        width: 800px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 270px;
+        height: 40px;
+    }
+    .barra_pesquisa > input {
+        height: 30px;
+        width: 240px;
+    }
+    /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 20px;
+    }
+ }
+ /*para telas mobiles*/
+ @media only screen and (max-width: 500px){
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 200px;
+        height: 40px;
+    }
+   /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 20px;
+    }
+ }
+
+/*------------------------- FIM DO CODIGO DE JOÃO FELIPE ----------------------------*/
+
+
+
+.categoria {
+    max-width: 100%;
+    width: 1440px;
+    height: 350px;
+}
+
+.cards_Produtos_para_vender {
+    max-width: 1300px;
+    max-height: 11300px;
+    margin: 42px 70px 42px 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*Card do produto*/
+.card_produto {
+    height: 520px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease;
+    margin: 10px;
+    border: 1px solid rgba(174, 174, 174, 0.521);
+    border-radius: 10px;
+
+}
+
+/*container filho de card do produto que guarda img, nome e valor*/
+.dados_do_produto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.dados_do_produto > img {
+    height: 250px;
+    width: 250px;
+}
+.dados_do_produto p {
+    font-size: 25px;
+    color: #E55E82;
+}
+
+/*container filho de card do produto que guarda forms de quantidade, botao carrinho e botao comprar*/
+.interaçoes_card {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.interaçao_carrinho {
+    display: flex;
+    justify-content: space-around;
+}
+.interaçao_carrinho > input {
+    height: 50px;
+    width: 150px;
+    border: 1px solid #AEAEAE;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 5px;
+
+}
+.interaçao_carrinho > button {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #F9A8C8;
+    border: none;
+}
+.interaçao_carrinho > button {
+    color: #E55E82;
+    font-size: 30px;
+    border: none;
+}
+
+.botao_comprar > input {
+    width: 305px;
+    height: 50px;
+    color: white;
+    margin: 10px 5px;
+   
+    border: none;
+    border-radius: 10px;
+    background-color: #E55E82;
+}
+.botao_comprar > input:hover {
+    background-color: white;
+    color: #E55E82;
+    border: 1px solid #E55E82;
+    transition-duration: 1s;
+}
+
+footer > img{
+    min-width: 150px;
+    max-width: 200px;
+    min-height: 125px;
+    max-height: 200px;
+    margin-top: 100px;
+}
+
+footer{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    height: 400px;
+    background: #E55E82; 
+}
+
+footer > img{
+    min-width: 150px;
+    max-width: 200px;
+    min-height: 125px;
+    max-height: 200px;
+    margin-left: 59px;
+}
+
+.icones_rodape{
+    display: flex;
+    width: 100%;
+    justify-content:end;
+    margin-right: 5%;
+}
+
+.icones_rodape > a{
+    font-size: 50px;
+    width: 50px;
+    color: white;
+    margin-left: 29px;
+}
