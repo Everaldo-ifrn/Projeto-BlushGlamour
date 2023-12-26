@@ -69,6 +69,14 @@ def carrinho():
 def carrinho_compra():
     return redirect('/BlushGlamour-carrinho')
 
+#PAGINA DO PRODUTO
+@app.route('/BlushGlamour-Produto')
+def paginaProduto():
+   return render_template('paginaProduto.html')
+@app.route('/BlushGlamour-Produto', methods=['POST'])
+def pagina_produto():
+    return redirect('/BlushGlamour-Produto')
+
 
 
 if __name__ == '__main__':

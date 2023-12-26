@@ -3,6 +3,12 @@
     margin: 0;
     box-sizing: border-box; /* Importante para o dimensionamento correto */
 }
+@font-face {
+    font-family: RedHatDisplay;
+    /*UTILIZANDO SEM FLASK*/
+    src: url('/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+    /*UTILIZANDO COM FLASK*/
+}
 
 body {
     font-family: RedHatDisplay;
@@ -15,10 +21,6 @@ html {
     margin: 0 auto;
 }
 
-@font-face {
-    font-family: RedHatDisplay;
-    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
-}
 
 /*========================================= BARRA LATERAL============================================*/
 #barra-lateral {
@@ -32,6 +34,7 @@ html {
     transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
     display: flex;
     flex-direction: column;
+    z-index: 3;
 }
 /*Aqui estou modelando a parte do perfil do usuario*/
 .DadosPerfil {
@@ -42,7 +45,7 @@ html {
     align-items: center;
     padding-bottom: 10px;
 }
-.DadosPerfil > p {
+.DadosPerfil > a {
     margin-left: 20px;
     color: white;
     font-size: 20px;
@@ -52,9 +55,9 @@ html {
     color: #ffffff;
     text-decoration: none;
 }
-.DadosPerfil > div > img {
+.DadosPerfil > a > div > img {
     border-radius: 100%;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 2px solid white;
     
 }

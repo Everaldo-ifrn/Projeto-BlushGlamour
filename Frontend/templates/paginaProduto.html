@@ -21,8 +21,8 @@
         </div>
         <div class="logo">
              <figure>
-                <img src="imagens/Logo-BlushGlamour.png" alt="">
-           </figure>
+                <img src="{{ url_for('static', filename='imagens/Pagina_principal/Logo-BlushGlamour.png') }}" alt="">
+             </figure>
         </div>
     </div>
     <div class="carrinho_barraDePesquisa">
@@ -38,40 +38,40 @@
       </div>
     </div>
   </header>
-
   <nav>
-    <div id="barra-lateral">
+      <!-- Barra lateral -->
+      <div id="barra-lateral">
         <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
         <div class="DadosPerfil">
-          <div class="imagemPerfil"><img src="imagens/produtos/felipe-galan.jpg" alt="" height="95px" width="95px"></div>
-          <p>nome do usuario</p>
+            <a href="/"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+            <a href="/">Nome do usuario</a>
         </div>
         <div class="conteuldoBarralateral">
-          <h1>BlushGlamour</h1>
-          <div><i class="fa fa-home"></i><a href="">Home</a></div>
+            <h1>BlushGlamour</h1>
+            <div><i class="fa fa-home"></i><a href="/">Home</a></div>
         </div>
         <nav class="conteuldoBarralateral">
-          <h1>Categorias</h1>
-          <div><a href="">Bases</a></div>
-          <div><a href="">Paletas</a></div>
-          <div><a href="">Pinceis</a></div>
-          <div><a href="">Delineadores</a></div>
-          <div><a href="">Batons</a></i></div>
-          <div><a href="">Rimels</a></div>
+            <h1>Categorias</h1>
+            <div><a href="">Bases</a></div>
+            <div><a href="">Paletas</a></div>
+            <div><a href="">Pinceis</a></div>
+            <div><a href="">Delineadores</a></div>
+            <div><a href="">Batons</a></i></div>
+            <div><a href="">Rimels</a></div>
         </nav>
         <div class="conteuldoBarralateral">
-          <h1>Açoes</h1>
-          <div><i class="fa fa-user"></i><a href="">Login</a></div>
-          <div><i class="fa-solid fa-right-to-bracket"></i><a href="">Logout</a></div>
+            <h1>Açoes</h1>
+            <div><i class="fa fa-user"></i><a href="/BlushGlamour-login">Login</a></div>
+            <div><i class="fa-solid fa-address-card"></i><a href="/BlushGlamour-cadastro">Cadastrar-se</a></div>
+            <div><i class="fa-solid fa-right-to-bracket"></i><a href="">Logout</a></div>
         </div>
-      </div>
-      <script src="barraLateral.js"></script>
+    </div>
+    <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
   </nav>
-
   <main>
     <div class="produto_mais_informacao">
       <div class="produto">
-        <img src="imagens/BaseBocaRosa01.png" alt="Foto do produto">
+        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
         
         <div class="informacao_produto">
           <h2 id="nome_produto">Base da Boca Rosa</h2>
@@ -99,9 +99,8 @@
       </div>
     </div>
   </main>
-
   <footer>
-    <img src="./imagens/BlushGlamour-foooter.png" alt="Logo BlushGlamour rodapé">
+    <img src="{{ url_for('static', filename='imagens/Pagina_principal/BlushGlamour-footer.png') }}" alt="">
     <div class="icones_rodape">
       <a href="#"><i class="fa-brands fa-facebook"></i></a>
       <a href="#"><i class="fa-brands fa-instagram"></i></a>
