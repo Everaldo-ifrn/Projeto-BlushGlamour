@@ -24,7 +24,7 @@ body {
     transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: 3;
 }
 /*Aqui estou modelando a parte do perfil do usuario*/
 .DadosPerfil {
@@ -35,7 +35,7 @@ body {
     align-items: center;
     padding-bottom: 10px;
 }
-.DadosPerfil > p {
+.DadosPerfil > a {
     margin-left: 20px;
     color: white;
     font-size: 20px;
@@ -45,9 +45,9 @@ body {
     color: #ffffff;
     text-decoration: none;
 }
-.DadosPerfil > div > img {
+.DadosPerfil > a > div > img {
     border-radius: 100%;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 2px solid white;
     
 }

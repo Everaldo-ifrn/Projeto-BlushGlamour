@@ -15,7 +15,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='javaScript/carrossel.js') }}"></script>    
     <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
-
 </head>
 <body>
     <header>
@@ -47,8 +46,8 @@
          <div id="barra-lateral">
             <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
             <div class="DadosPerfil">
-                <div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div>
-                <p>nome do usuario</p>
+                <a href="/"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+                <a href="/">Nome do usuario</a>
             </div>
             <div class="conteuldoBarralateral">
                 <h1>BlushGlamour</h1>
