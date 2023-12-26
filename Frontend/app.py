@@ -85,6 +85,5 @@ def barraPesquisa():
 def barra_Pesquisa():
     return redirect('/pesquisa')
 
-
 if __name__ == '__main__':
     app.run(debug=True)
