@@ -77,6 +77,13 @@ def paginaProduto():
 def pagina_produto():
     return redirect('/BlushGlamour-Produto')
 
+#PAGINA DA BARRA DE PESQUISA
+@app.route('/pesquisa')
+def barraPesquisa():
+   return render_template('barradePesquisa.html')
+@app.route('/pesquisa', methods=['POST'])
+def barra_Pesquisa():
+    return redirect('/pesquisa')
 
 
 if __name__ == '__main__':
