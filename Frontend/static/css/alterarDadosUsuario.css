@@ -8,8 +8,11 @@ body {
 }
 @font-face {
     font-family: RedHatDisplay;
-    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+    /*UTILIZANDO SEM FLASK*/
+    src: url('/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+    /*UTILIZANDO COM FLASK*/
 }
+
 
 
 /*AQUI IREI MODELAR O MAIN*/
@@ -139,7 +142,7 @@ form > fieldset > h2 {
     .formulario {
         max-width: 800px;
         height: 650px;
-        background-image: url('imagens/Login_cadastro/fundo_branco.png');
+        background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
     }
     /*AQUI IREI MODELAR O FORMULARIO*/
     .titulo {
@@ -197,7 +200,7 @@ form > fieldset > h2 {
     .formulario {
         max-width: 400px;
         height: 1200px;
-        background-image: url('imagens/Login_cadastro/fundo_branco.png');
+        background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
     }
     form {
         margin-left: 25px;

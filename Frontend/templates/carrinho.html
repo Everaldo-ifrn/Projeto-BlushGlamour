@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>carrinho</title>
-    <!--PARA MEXE QUANDO ESTIVER SEM O FLASK(VOCÊ DEVE COLOCAR O CAMINHO DO SEU COMPUTADOR PARA FAZER QUAISQUER CORREÇÕES)-->
+    <!--PARA MEXE QUANDO ESTIVER SEM O FLASK(VOCÊ DEVE COLOCAR O CAMINHO DO SEU COMPUTADOR PARA FAZER QUAISQUER CORREÇÕES)
     <link rel="stylesheet" href="carrinho.css">
     <link rel="stylesheet" href="font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css">
+    -->
+    <!--COM FLASK-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrinho.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='javaScript/carrossel.js') }}"></script>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
 </head>
 <body>
     <header>
@@ -17,7 +23,7 @@
             </div>
             <div class="logo">
                 <figure>
-                    <img src="imagens/Pagina_principal/Logo-BlushGlamour.png" alt="">
+                    <img src="{{ url_for('static', filename='imagens/Pagina_principal/Logo-BlushGlamour.png') }}" alt="">
                 </figure>
             </div>
         </div>
@@ -61,12 +67,12 @@
                <div><i class="fa-solid fa-right-to-bracket"></i><a href="">Logout</a></div>
            </div>
        </div>
-       <script src="barraLateral.js"></script>
+       <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
    </nav>
     <main>
         <section class="addProduto">
             <figure>
-                <img src="imagens/produtos/Bases/BaseBocaRosa01.png" alt="">
+                <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
             </figure>
             <div class="produtoDescricao">
                 <div class="textoAddProduto">
@@ -86,7 +92,8 @@
         </section>
     </main>
     <footer>
-        <img src="imagens/Pagina_principal/BlushGlamour-foooter.png" alt="Logo BlushGlamour rodapé">
+        
+        <img src="{{ url_for('static', filename='imagens/Pagina_principal/BlushGlamour-footer.png') }}" alt="">
         <div class="icones_rodape">
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>

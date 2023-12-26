@@ -10,7 +10,7 @@ body {
 @font-face {
     font-family: RedHatDisplay;
     /*UTILIZANDO SEM FLASK*/
-    src: url('C:/Users/joao felipe/OneDrive/Documents/ESCOLA-FELIPE/IFRN CURSO PROGRAMAÇA/Projeto-BlushGlamour/Frontend/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+    src: url('/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
     /*UTILIZANDO COM FLASK*/
 }
 
@@ -262,47 +262,47 @@ main {
 .anunciado {
     height: 450px;
     max-width: 1440px;
-    background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPrinciapal.png');
+    background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPrinciapal.png');
 }
 @media only screen and (max-width: 1300px){
     .anunciado{
-        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1300.png');
+        background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1300.png');
         
     }
 }
 @media only screen and (max-width: 1200px){
     .anunciado{
-        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1200.png');
+        background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1200.png');
         
     }
 }
 @media only screen and (max-width: 1100px){
     .anunciado{
-        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1100.png');
+        background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1100.png');
         
     }
 }
 @media only screen and (max-width: 1000px){
     .anunciado{
-        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1000.png');
+        background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_1000.png');
         height: 350px;
     }
 }
 @media only screen and (max-width: 850px){
     .anunciado{
-        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_850.png');
+        background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_850.png');
         height: 350px;
     }
 }
 @media only screen and (max-width: 800px){
     .anunciado{
-        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_800.png');
+        background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_800.png');
         height: 350px;
     }
 }
 @media only screen and (max-width: 500px){
     .anunciado{
-        background-image: url('imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_500.png');
+        background-image: url('/static/imagens/Pagina_principal/anunciados/anunciadoPaginaPincipal_500.png');
         height: 300px;
     }
 }
@@ -679,11 +679,11 @@ main {
 
 /*Container que tem p, h1 e button*/
 #propaganda1 {
-    background-image: url("imagens/Pagina_principal/PRopaganda2-dekstop.png");
+    background-image: url("/static/imagens/Pagina_principal/PRopaganda2-dekstop.png");
     
 }
 #propaganda2 {
-    background-image: url("imagens/Pagina_principal/PRopaganda1-dekstop.png");
+    background-image: url("/static/imagens/Pagina_principal/PRopaganda1-dekstop.png");
 }
 .propaganda {
     height: 500px;
@@ -732,11 +732,11 @@ main {
 
 @media only screen and (max-width: 800px){ 
     #propaganda1 {
-        background-image: url("imagens/Pagina_principal_mobile/Propaganda2mobile.png");
+        background-image: url("/static/imagens/Pagina_principal_mobile/Propaganda2mobile.png");
         
     }
     #propaganda2 {
-        background-image: url("imagens/Pagina_principal_mobile/Propaganda1mobile.png");
+        background-image: url("/static/imagens/Pagina_principal_mobile/Propaganda1mobile.png");
     }
     .propaganda {
         height: 500px;

@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlushGlamour</title>
-    <!--PARA MEXE QUANDO ESTIVER SEM O FLASK(VOCÊ DEVE COLOCAR O CAMINHO DO SEU COMPUTADOR PARA FAZER QUAISQUER CORREÇÕES)-->
+    <!--PARA MEXE QUANDO ESTIVER SEM O FLASK(VOCÊ DEVE COLOCAR O CAMINHO DO SEU COMPUTADOR PARA FAZER QUAISQUER CORREÇÕES)
     <link rel="stylesheet" href="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\css\paginaPrincipal.css">
     <link rel="stylesheet" href="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\font-awesomw-2\fontawesome-free-6.4.2-web\css\all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\javaScript\carrossel.js"></script>
+    -->
     <!--QUANDO ESTIVER UTILIZANDO FLASK-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/paginaPrincipal.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='javaScript/carrossel.js') }}"></script>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
 
 </head>
 <body>
@@ -20,7 +25,7 @@
             </div>
             <div class="logo">
                  <figure>
-                    <img src="imagens/Pagina_principal/Logo-BlushGlamour.png" alt="">
+                   <img src="{{ url_for('static', filename='imagens/Pagina_principal/Logo-BlushGlamour.png') }}" alt="">
                </figure>
             </div>
         </div>
@@ -64,7 +69,7 @@
                 <div><i class="fa-solid fa-right-to-bracket"></i><a href="">Logout</a></div>
             </div>
         </div>
-        <script src="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\javaScript\barraLateral.js"></script>
+        <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
     </nav>
     <main>
         <!--Aqui voces continuam o codigo da pagina-->
@@ -75,7 +80,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="imagens/produtos/Bases/baseBrunaTavares01-removebg-preview.png" alt=""></figure>
+                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                          <h1>R$100</h1>
                          <button>Eu quero!</button>
@@ -84,7 +89,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="imagens/produtos/Bases/baseMari02-removebg-preview.png" alt=""></figure>
+                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button>Eu quero!</button>
@@ -93,7 +98,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="imagens/produtos/Batons/batomBrunaTavares06-removebg-preview.png" alt="" ></figure>
+                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button>Eu quero!</button>
@@ -102,7 +107,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="imagens/produtos/Bases/BaseDior01-removebg-preview.png" alt="" ></figure>
+                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button>Eu quero!</button>
@@ -111,7 +116,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="imagens/produtos/Delineadores/DelineadorMari02-removebg-preview.png" alt="" ></figure>
+                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button>Eu quero!</button>
@@ -127,34 +132,34 @@
                 <div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\imagens\Pagina_principal/Base.png" alt=""></a>
+                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Base.png') }}" alt=""></a>
                         <div><a href="">Bases</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\imagens\Pagina_principal/Batom.png" alt=""></a>
+                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Batom.png') }}" alt=""></a>
                         <div><a href="">Batons</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\imagens\Pagina_principal/Paleta.png" alt=""></a>
+                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Paleta.png') }}" alt=""></a>
                         <div><a href="">Paletas</a></div>
                     </div>
                 </div>
                 <div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="imagens/Pagina_principal/Pincel.png" alt="">
+                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Pincel.png') }}" alt=""></a>
                         <div><a href="">Pinceis</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="imagens/Pagina_principal/Delineador.png" alt=""></a>
+                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Delineador.png') }}" alt=""></a>
                         <div><a href="">Delineadores</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="imagens/Pagina_principal/Rimel.png" alt=""></a>
+                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Rimel.png') }}" alt=""></a>
                         <div><a href="">Rimels</a></div>
                     </div>
                 </div>
@@ -165,7 +170,7 @@
                 <!--CARD DO PRODUTO A VENDA-->
                 <div class="card_produto">
                     <div class="dados_do_produto">
-                        <img src="imagens/produtos/Bases/baseBrunaTavares01-removebg-preview (1).png" alt="">
+                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
                         <p>Nome do produto</p>
                         <p>R$000.0</p>
                     </div>
@@ -182,7 +187,7 @@
                 <!--CARD DO PRODUTO A VENDA-->
                 <div class="card_produto">
                     <div class="dados_do_produto">
-                        <img src="imagens/produtos/Batons/BatomMrubyKiss02-removebg-preview.png" alt="">
+                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
                         <p>Nome do produto</p>
                         <p>R$000.0</p>
                     </div>
@@ -199,7 +204,7 @@
                 <!--CARD DO PRODUTO A VENDA-->
                 <div class="card_produto">
                     <div class="dados_do_produto">
-                        <img src="imagens/produtos/Bases/bseNina02-removebg-preview.png" alt="">
+                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
                         <p>Nome do produto</p>
                         <p>R$000.0</p>
                     </div>
@@ -216,7 +221,7 @@
                 <!--CARD DO PRODUTO A VENDA-->
                 <div class="card_produto">
                     <div class="dados_do_produto">
-                        <img src="imagens/produtos/Batons/batomBrunaTavares02-removebg-preview.png" alt="">
+                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
                         <p>Nome do produto</p>
                         <p>R$000.0</p>
                     </div>
@@ -233,7 +238,7 @@
                 <!--CARD DO PRODUTO A VENDA-->
                 <div class="card_produto">
                     <div class="dados_do_produto">
-                        <img src="imagens/produtos/Batons/BatomBrunaTavares03-removebg-preview.png" alt="">
+                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
                         <p>Nome do produto</p>
                         <p>R$000.0</p>
                     </div>
@@ -250,7 +255,7 @@
                 <!--CARD DO PRODUTO A VENDA-->
                 <div class="card_produto">
                     <div class="dados_do_produto">
-                        <img src="imagens/produtos/Bases/BaseBocaRosa01-removebg-preview.png" alt="">
+                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
                         <p>Nome do produto</p>
                         <p>R$000.0</p>
                     </div>
@@ -288,7 +293,7 @@
         </section>
     </main>
     <footer>
-        <img src="imagens/Pagina_principal/BlushGlamour-foooter.png" alt="Logo BlushGlamour rodapé">
+        <img src="{{ url_for('static', filename='imagens/Pagina_principal/BlushGlamour-footer.png') }}" alt="">
         <div class="icones_rodape">
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>

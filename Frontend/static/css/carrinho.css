@@ -7,8 +7,11 @@ body {
 }
 @font-face {
     font-family: RedHatDisplay;
-    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+    /*UTILIZANDO SEM FLASK*/
+    src: url('/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+    /*UTILIZANDO COM FLASK*/
 }
+
 /*========================================= BARRA LATERAL============================================*/
 #barra-lateral {
     width: 350px;
