@@ -130,7 +130,7 @@ header {
     top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: box-shadow 0.3s ease;
-    z-index: 1;
+    z-index: 3;
 }
 .botao_logo {
     display: flex;
@@ -205,10 +205,10 @@ header {
     background-color:#5ee55e;
     border-radius: 100%;
     margin-right: 30px;
+    
  }
-
  /*AQUI IREI MODELAR AS MEDIAS QUERIES*/
- @media only screen and (max-width: 800px){
+ @media only screen and (max-width: 820px){
     /*Aqui irei modelar o header*/
     header {
         flex-wrap: wrap-reverse;
@@ -236,9 +236,6 @@ header {
         margin-right: 20px;
     }
  }
-
-
-
  /*para telas mobiles*/
  @media only screen and (max-width: 500px){
     /*aqui estou modelando o carrinho e a barra de pesquisa*/
@@ -249,7 +246,7 @@ header {
     }
    /*aqui irei modelar o carrinho*/
     #carrinho {
-        margin-right: 30px;
+        margin-right: 20px;
     }
  }
 
@@ -454,22 +451,22 @@ footer > img{
         width: 280px;
         height: 50px;
         font-size: 12px;
+
     }
     .finalizarCompra > h2{
-        font-size: 23px;
+        font-size: 18px;
     }
 
 }
 
 /*modelando para telas max-width 500px*/
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 550px){
     .textoAddProduto > h1{
         font-size: 25px;
-    
     }
     .lixeraFinalizar > a > button{
         width: 270px;
-        height: 40px;
+        height: 50px;
         font-size: 10px;
     }
     .finalizarCompra{
