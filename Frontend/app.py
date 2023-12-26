@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = "568425806"
 @app.route('/')
 def blushGlamour():
    return render_template('paginaPrincipal.html')
-@app.route('/BlushGlamour', methods=['POST'])
+@app.route('/BlushGlamour', methods=['GET'])
 def homepage_blushGlamour():
     return redirect('/BlushGlamour')
 

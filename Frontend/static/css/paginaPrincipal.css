@@ -37,7 +37,7 @@ body {
     align-items: center;
     padding-bottom: 10px;
 }
-.DadosPerfil > p {
+.DadosPerfil > a {
     margin-left: 20px;
     color: white;
     font-size: 20px;
@@ -47,9 +47,9 @@ body {
     color: #ffffff;
     text-decoration: none;
 }
-.DadosPerfil > div > img {
+.DadosPerfil > a > div > img {
     border-radius: 100%;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 2px solid white;
     
 }
