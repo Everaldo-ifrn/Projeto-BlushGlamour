@@ -116,7 +116,7 @@ form > fieldset > h2 {
 /*Aqui irei modelar o botao de entrar*/
 .botaoEntrar {
     margin: auto;
-    margin-top: 200px;  
+    margin-top: 100px;  
 }
 .botaoEntrar {
     width: 300px;
@@ -164,7 +164,7 @@ form > fieldset > h2 {
     }
     /*Aqui estou modelando os botoes*/
     .botaoEntrar {
-        margin-top: 30px;  
+        margin-top: 0px;  
         margin-right: 48px;
     }
     .botaoVoltar > a {
@@ -219,7 +219,7 @@ form > fieldset > h2 {
     }
      /*aqui estou modelando o botao de entrar do formuLarioe na versao mobile*/
     .botaoEntrar {
-        margin-top: 100px;  
+        margin-top: 50px;  
     }
    
 }

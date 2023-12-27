@@ -1,4 +1,5 @@
 from flask import Flask,  request, jsonify, render_template, redirect, flash, session
+from blushGlamour import BancoDeDados, Pessoa, Cliente
 import mysql.connector
 
  
@@ -13,6 +14,9 @@ def blushGlamour():
 def homepage_blushGlamour():
     return redirect('/BlushGlamour')
 
+
+
+
 #PAGINA DE LOGIN DO CLIENTE
 @app.route('/BlushGlamour-login')
 def LoginCliente():
@@ -21,13 +25,43 @@ def LoginCliente():
 def login_Cliente():
     return redirect('/BlushGlamour-login')
 
+
+
+
 #PAGINA DE CADASTRO DO CLIENTE
 @app.route('/BlushGlamour-cadastro')
 def cadastroCliente():
    return render_template('cadastroCliente.html')
 @app.route('/BlushGlamour-cadastro', methods=['POST'])
 def cadastro_Cliente():
-    return redirect('/BlushGlamour-cadastro')
+        cpf = request.form.get('cpf')
+        nome = request.form.get('nome')
+        email = reqaauest.form.get('email')
+        senha = request.form.get('senha')
+        telefone = request.form.get('telefone')
+        dataNascimento = request.form.get('data')
+        rua = request.form.get('rua')
+        cidade = request.form.get('cidade')
+        estado = request.form.get('estado')
+        cep= request.form.get('cep')
+        bairro = request.form.get('bairro')
+        complemento = request.form.get('Complemento')
+        #esta classe serve para sempre linkar o banco de dados
+        bd = BancoDeDados()
+        bd = bd.linkarBancoDeDados()
+        cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, estado, cep, bairro, complemento)
+        cliente.cadastrar(bd)
+
+        return redirect('/')
+        
+
+
+    
+
+   
+
+
+
 
 #PAGINA DE LOGIN DO FORNECEDOR
 @app.route('/BlushGlamour-Fornecedores')
@@ -37,6 +71,9 @@ def loginFornecedor():
 def login_Fornecedor():
     return redirect('/BlushGlamour-Fornecedores')
 
+
+
+
 #PAGINA DE CADASTRO DO FORNECEDOR
 @app.route('/BlushGlamour-CadastroFornecedores')
 def cadastroFornecedor():
@@ -44,6 +81,9 @@ def cadastroFornecedor():
 @app.route('/BlushGlamour-CadastroFornecedores', methods=['POST'])
 def cadastro_Fornecedor():
     return redirect('/BlushGlamour-CadastroFornecedores')
+
+
+
 
 #PAGINA DE ALTERAR DADOS
 @app.route('/alterarDados')
@@ -53,6 +93,9 @@ def alterarDados():
 def alterar_dados():
     return redirect('/alterarDados')
 
+
+
+
 #PAGINA DE ESQUECI A SENHA
 @app.route('/esqueciSenha')
 def esqueciSenha():
@@ -60,6 +103,9 @@ def esqueciSenha():
 @app.route('/esqueciSenha', methods=['POST'])
 def esqueci_Senha():
     return redirect('/esqueciSenha')
+
+
+
 
 #PAGINA DO CARRINHO
 @app.route('/BlushGlamour-carrinho')
@@ -69,6 +115,9 @@ def carrinho():
 def carrinho_compra():
     return redirect('/BlushGlamour-carrinho')
 
+
+
+
 #PAGINA DO PRODUTO
 @app.route('/BlushGlamour-Produto')
 def paginaProduto():
@@ -76,6 +125,9 @@ def paginaProduto():
 @app.route('/BlushGlamour-Produto', methods=['POST'])
 def pagina_produto():
     return redirect('/BlushGlamour-Produto')
+
+
+
 
 #PAGINA DA BARRA DE PESQUISA
 @app.route('/pesquisa')
