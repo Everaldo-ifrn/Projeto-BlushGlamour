@@ -36,7 +36,7 @@ def cadastroCliente():
 def cadastro_Cliente():
      cpf = request.form.get('cpf')
      nome = request.form.get('nome')
-     email = reqaauest.form.get('email')
+     email = request.form.get('email')
      senha = request.form.get('senha')
      telefone = request.form.get('telefone')
      dataNascimento = request.form.get('data')
