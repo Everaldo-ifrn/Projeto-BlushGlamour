@@ -4,13 +4,15 @@ from datetime import datetime
 
 import mysql.connector
 
- 
+#meu apricativo
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "568425806"
 
 #conexao com o banco de dados
 bd = BancoDeDados()
 db = bd.linkarBancoDeDados()
+
+
 
 #PAGINA PRINCIPAL DO SITE
 @app.route('/', methods=['GET', 'POST'])
