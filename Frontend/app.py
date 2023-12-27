@@ -10,7 +10,7 @@ app.config['SECRET_KEY'] = "568425806"
 @app.route('/')
 def blushGlamour():
    return render_template('paginaPrincipal.html')
-@app.route('/BlushGlamour', methods=['GET'])
+@app.route('/BlushGlamour', methods=['POST'])
 def homepage_blushGlamour():
     return redirect('/BlushGlamour')
 
@@ -52,7 +52,7 @@ def cadastro_Cliente():
         cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, estado, cep, bairro, complemento)
         cliente.cadastrar(bd)
 
-        return redirect('/')
+        return redirect('/BlushGlamour-login')
         
 
 
