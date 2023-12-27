@@ -35,7 +35,6 @@ def login_Cliente():
 
 
 
-
 #PAGINA DE CADASTRO DO CLIENTE
 @app.route('/BlushGlamour-cadastro', methods=['GET', 'POST'])
 def cadastroCliente():
@@ -61,6 +60,7 @@ def cadastroCliente():
         cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, complemento, bairro, imagemPerfil)
         cliente.cadastrar(db)
         print(request.form)
+        session[email] = True
         return redirect('/')
     
 
