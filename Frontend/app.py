@@ -54,7 +54,7 @@ def cadastroCliente():
         estado = request.form.get('estado')
         cep = request.form.get('cep')
         bairro = request.form.get('bairro')
-        NumeroResidencia = '456'
+        NumeroResidencia = request.form.get('numeroResidencia')
         complemento = request.form.get('Complemento')
         imagemPerfil = "imagem.jpg"
 
@@ -167,10 +167,12 @@ def logout():
    if request.method == 'GET':
         Cliente = Sessao(email=None)
         Cliente.finalizarSessao()
+        print('cheguei')
         return render_template('paginaPrincipal.html')
    
    elif request.method == 'POST':
         return redirect('/')
+   print('cheguei2')
 
 
 

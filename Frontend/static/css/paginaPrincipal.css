@@ -639,7 +639,7 @@ main {
     border: none;
 }
 
-.botao_comprar > input {
+.botao_comprar > button {
     width: 305px;
     height: 50px;
     color: white;
@@ -649,7 +649,7 @@ main {
     border-radius: 10px;
     background-color: #E55E82;
 }
-.botao_comprar > input:hover {
+.botao_comprar > button:hover {
     background-color: white;
     color: #E55E82;
     border: 1px solid #E55E82;

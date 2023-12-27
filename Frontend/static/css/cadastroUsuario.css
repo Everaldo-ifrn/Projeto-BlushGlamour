@@ -28,7 +28,7 @@ main {
     max-width: 1000px;
     height: 800px;
     border-radius: 10px;
-    background-image: url('/static/imagens/Login_cadastro/Cadastro-usuario.png');
+    background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 5px 5px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 60px;
 }
@@ -67,8 +67,6 @@ form > fieldset > h2 {
     -webkit-background-clip: text;
     color: transparent;
 }
-
-
 /*Aqui irei modelar a parte do titulo*/
 .titulo {
     display: flex;
@@ -116,7 +114,7 @@ form > fieldset > h2 {
 /*Aqui irei modelar o botao de entrar*/
 .botaoEntrar {
     margin: auto;
-    margin-top: 100px;  
+    margin-top: 50px;  
 }
 .botaoEntrar {
     width: 300px;
@@ -143,7 +141,7 @@ form > fieldset > h2 {
 @media only screen and (max-width: 1000px){
     .formulario {
         max-width: 800px;
-        height: 650px;
+        height: 750px;
         background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
     }
     /*AQUI IREI MODELAR O FORMULARIO*/
@@ -180,7 +178,7 @@ form > fieldset > h2 {
 @media only screen and (max-width: 800px){
     main {
         max-width: 428px;
-        height: 1250px;
+        height: 1450px;
     }
     /*aqui estou modelndo a parte mobile do titulo do formuLario*/
     .titulo {
@@ -199,7 +197,7 @@ form > fieldset > h2 {
     /*aqui estou modelndo a parte mobile do conteudo do formuLario*/
     .formulario {
         max-width: 400px;
-        height: 1200px;
+        height: 1400px;
         background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
     }
     form {
