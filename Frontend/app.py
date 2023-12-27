@@ -34,32 +34,28 @@ def cadastroCliente():
    return render_template('cadastroCliente.html')
 @app.route('/BlushGlamour-cadastro', methods=['POST'])
 def cadastro_Cliente():
-        cpf = request.form.get('cpf')
-        nome = request.form.get('nome')
-        email = reqaauest.form.get('email')
-        senha = request.form.get('senha')
-        telefone = request.form.get('telefone')
-        dataNascimento = request.form.get('data')
-        rua = request.form.get('rua')
-        cidade = request.form.get('cidade')
-        estado = request.form.get('estado')
-        cep= request.form.get('cep')
-        bairro = request.form.get('bairro')
-        complemento = request.form.get('Complemento')
-        #esta classe serve para sempre linkar o banco de dados
-        bd = BancoDeDados()
-        bd = bd.linkarBancoDeDados()
-        cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, estado, cep, bairro, complemento)
-        cliente.cadastrar(bd)
-
-        return redirect('/BlushGlamour-login')
+     cpf = request.form.get('cpf')
+     nome = request.form.get('nome')
+     email = reqaauest.form.get('email')
+     senha = request.form.get('senha')
+     telefone = request.form.get('telefone')
+     dataNascimento = request.form.get('data')
+     rua = request.form.get('rua')
+     cidade = request.form.get('cidade')
+     estado = request.form.get('estado')
+     cep= request.form.get('cep')
+     bairro = request.form.get('bairro')
+     complemento = request.form.get('Complemento')
         
+     #esta classe serve para sempre linkar o banco de dados
+     bd = BancoDeDados()
+     bd = bd.linkarBancoDeDados()
+     cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, estado, cep, bairro, complemento)
+     cliente.cadastrar(bd)
 
+     return redirect('/')
 
-    
-
-   
-
+        
 
 
 
