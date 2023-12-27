@@ -127,9 +127,9 @@ db = bd.linkarBancoDeDados()
 print(db)
 
 
-cpf = '21499868'
-nome = 'joao'
-email = '@vanna.com'
+cpf = '2144448'
+nome = 'Bruna'
+email = '@joaosouza.com'
 senha = '4568'
 telefone = '79979777'
 dataNascimento = '2023-03-15'
