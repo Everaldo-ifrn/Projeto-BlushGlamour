@@ -63,8 +63,14 @@ def cadastroCliente():
         cliente.cadastrar(db)
 
         #criando sessao para o usuario apos o cadastro
-        cliente = Sessao(email)
-        cliente.criarSessao()
+        try:
+          cliente = Sessao(email)
+          cliente.criarSessao()
+        except Exception as e:
+          print(f"Erro ao criar sessão: {e}")
+          return redirect('/BlushGlamour-cadastro')
+        
+        #caso tudo ocorra bem ele ira ser redirecionado para a pagina inicial
         print(request.form)
         return redirect('/')
     
