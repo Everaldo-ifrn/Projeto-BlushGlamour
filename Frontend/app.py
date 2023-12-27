@@ -59,8 +59,11 @@ def cadastroCliente():
         # esta classe serve para sempre linkar o banco de dados
         cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, complemento, bairro, imagemPerfil)
         cliente.cadastrar(db)
+
+        #criando sessao para o usuario apos o cadastro
+        cliente = Sessao(email)
+        cliente.criarSessao()
         print(request.form)
-        session[email] = True
         return redirect('/')
     
 
@@ -115,7 +118,11 @@ def esqueci_Senha():
 @app.route('/BlushGlamour-carrinho', methods=['GET', 'POST'])
 def carrinho_compra():
    if request.method == 'GET':
-        return render_template('carrinho.html')
+     if session.get('logado'):#verificando se existe uma sessao para poder entrar no carrinho
+          return render_template('carrinho.html')
+     elif not session.get('logado'): #se nao estiver logado ele nao vai poder entrar no carrinho e ira para pagina
+          return redirect('/BlushGlamour-login')
+
    elif request.method == 'POST':
         return redirect('/BlushGlamour-carrinho')
 
@@ -133,6 +140,7 @@ def pagina_produto():
 
 
 
+
 #PAGINA DA BARRA DE PESQUISA
 @app.route('/pesquisa', methods=['GET', 'POST'])
 def barra_Pesquisa():
@@ -140,6 +148,23 @@ def barra_Pesquisa():
         return render_template('barradePesquisa.html')
    elif request.method == 'POST':
         return redirect('/pesquisa')
+
+
+
+
+
+#ROTA PARA LOGOUT
+@app.route('/logout', methods=['GET', 'POST'])
+def logout():
+   if request.method == 'GET':
+        Cliente = Sessao(email=None)
+        Cliente.finalizarSessao()
+        return render_template('paginaPrincipal.html')
+   
+   elif request.method == 'POST':
+        return redirect('/')
+
+
 
 
 if __name__ == '__main__':

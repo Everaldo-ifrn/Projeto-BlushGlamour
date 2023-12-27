@@ -24,6 +24,23 @@ class BancoDeDados():
             return None
 
 
+#ESTA CLASE SERVE PARA CRIAR UMA SESSAO PARA DETERMINADO USUARIO
+class Sessao():
+    def __init__(self, email):
+        self.verificar = True
+        self.email = email
+    
+    def criarSessao(self):
+        session['logado'] = self.verificar
+        session['Email'] = self.email
+       
+    def finalizarSessao(self):
+        session.pop('logado', None)
+        session.pop('Email', None)
+       
+
+
+
 class Pessoa:
     def __init__(self, cpf, nome, email, senha, telefone, dataNascimento, rua=None,cidade=None, cep=None, estado=None, NumeroResidencia=None, Complemento=None, bairro=None, imagemPerfil=None):
         self.cpf = cpf
@@ -119,8 +136,7 @@ class Carrinho():
 
 
 #!!!!!!!!!!!AEA PARA TESTES!!!!!!!!!!
-
-
+'''
 #TESTE DAS INSERÇÔES DO CADASTRO
 bd = BancoDeDados()
 db = bd.linkarBancoDeDados()
@@ -144,3 +160,4 @@ imagemPerfil = "imagem.jpg"
 
 cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, complemento, bairro, imagemPerfil)
 cliente.cadastrar(db)
+'''
