@@ -133,6 +133,9 @@ class Produto:
     def atualizarProduto(self):
         pass
 
+    def visualizarProduto(self): #metodo para pegar os produtos e jogar nos cards etc
+        pass
+
 
 
 class Carrinho():
