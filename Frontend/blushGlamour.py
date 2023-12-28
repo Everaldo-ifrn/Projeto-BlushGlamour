@@ -1,11 +1,14 @@
 from flask import Flask,  request, jsonify, render_template, redirect, flash, session
 import mysql.connector
 
+
+
+#ESTA CLASE SERVE PARA CONEXAO CO O BANCO DE DADOS
 class BancoDeDados():
     def __init__(self):
         self.host = 'localhost'
         self.user = 'root'
-        self.password = 'labinfo'
+        self.password = 'felipe09'
         self.database = 'mydb'
         
     # Este método deve ser chamado toda vez que for usar o BD
@@ -72,10 +75,26 @@ class Pessoa:
         except mysql.connector.Error as e:
             print(f"Erro ao inserir dados no banco de dados: {e}")
 
-    def login(self):
-        pass
+    def login(self, db):
+        cursor = db.cursor(dictionary=True)
+        cursor.execute('SELECT senha, email FROM Cliente;') #Fazendo o select para pegar os dados do usuario
+        objetos =  cursor.fetchall()
 
-    def logout():
+        for dicionario in objetos: #estou verificando o dicionario que foi retornado e pegando o email e a senha
+            emailDicionario = dicionario['email'] 
+            senhaDicionario = dicionario['senha']
+            
+            if  emailDicionario == self.email and senhaDicionario == self.senha:
+                break
+
+        if  emailDicionario == self.email and senhaDicionario == self.senha:
+            cursor.close()
+            return 'OK'
+        else:
+            cursor.close()
+            return 'Senha ou Email incorretos!'
+
+    def logout(): #Nao sei se vamos precisar disso, ja estou fazendo com a classe sessao
         pass
 
     def atualizarDados():
@@ -161,3 +180,5 @@ imagemPerfil = "imagem.jpg"
 cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, complemento, bairro, imagemPerfil)
 cliente.cadastrar(db)
 '''
+
+

@@ -56,6 +56,13 @@ fieldset >  h1 {
     -webkit-background-clip: text;
     color: transparent;
 }
+.aviso {
+    background-color: rgba(255, 0, 0, 0.596);
+    margin-top: 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
 .caixasDeTexto {
     margin-bottom: 35px;
     margin-top: 90px;

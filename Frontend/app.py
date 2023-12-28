@@ -31,7 +31,26 @@ def login_Cliente():
    if request.method == 'GET':
         return render_template('loginCliente.html')
    elif request.method == 'POST':
-        return redirect('/BlushGlamour-login')
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+        
+        #chamando o metodo login
+        cliente = Cliente(email=email, senha=senha, cpf=None, nome=None, telefone=None, dataNascimento=None, rua=None, cidade=None, cep=None, estado=None, NumeroResidencia=None, Complemento=None, bairro=None, imagemPerfil=None)
+        status = cliente.login(db)
+        
+        #aqui vou criar uma sessao caso esteja tudo 
+        if status == 'OK':
+          #criando sessao para o usuario apos o cadastro
+          try:
+            cliente = Sessao(email)
+            cliente.criarSessao()
+            print('deu certo!')
+          except Exception as e:
+            print(f"Erro ao criar sessão: {e}")
+            return redirect('/BlushGlamour-login')
+        else:
+          return render_template('loginCliente.html', status=status)
+   return redirect('/')
 
 
 
