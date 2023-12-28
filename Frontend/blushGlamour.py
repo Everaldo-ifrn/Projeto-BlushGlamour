@@ -8,7 +8,7 @@ class BancoDeDados():
     def __init__(self):
         self.host = 'localhost'
         self.user = 'root'
-        self.password = 'felipe09'
+        self.password = 'labinfo'
         self.database = 'mydb'
         
     # Este método deve ser chamado toda vez que for usar o BD
@@ -76,10 +76,13 @@ class Pessoa:
             print(f"Erro ao inserir dados no banco de dados: {e}")
 
     def login(self, db):
-        cursor = db.cursor(dictionary=True)
-        cursor.execute('SELECT senha, email FROM Cliente;') #Fazendo o select para pegar os dados do usuario
-        objetos =  cursor.fetchall()
-
+        try:
+            cursor = db.cursor(dictionary=True)
+            cursor.execute('SELECT senha, email FROM Cliente;') #Fazendo o select para pegar os dados do usuario
+            objetos =  cursor.fetchall()
+        except:
+            return 'Senha ou Email incorretos!'
+        
         for dicionario in objetos: #estou verificando o dicionario que foi retornado e pegando o email e a senha
             emailDicionario = dicionario['email'] 
             senhaDicionario = dicionario['senha']
