@@ -186,12 +186,12 @@ def logout():
    if request.method == 'GET':
         Cliente = Sessao(email=None)
         Cliente.finalizarSessao()
-        print('cheguei')
+        
         return render_template('paginaPrincipal.html')
    
    elif request.method == 'POST':
         return redirect('/')
-   print('cheguei2')
+   
 
 
 
