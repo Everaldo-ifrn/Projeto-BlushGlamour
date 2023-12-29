@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pesquisa</title>
+    <!--PARA MEXE QUANDO ESTIVER SEM O FLASK(VOCÊ DEVE COLOCAR O CAMINHO DO SEU COMPUTADOR PARA FAZER QUAISQUER CORREÇÕES)
+    <link rel="stylesheet" href="carrinho.css">
+    <link rel="stylesheet" href="font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css">
+    -->
+    <!--COM FLASK-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/barradePesquisa.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='javaScript/carrossel.js') }}"></script>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
+</head>
+<body>
+    <header>
+        <div class="botao_logo">
+            <div class="botao">
+                <button id="toggle-btn"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="logo">
+                <figure>
+                    <img src="{{ url_for('static', filename='imagens/Pagina_principal/Logo-BlushGlamour.png') }}" alt="">
+                </figure>
+            </div>
+        </div>
+       <div class="carrinho_barraDePesquisa">
+            <div class="barraPesquisa_Botao">
+                <div class="barra_pesquisa">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" placeholder="O que deseja encontrar?">
+                </div>
+                <button  type="submit" id="botao_barraDePesquisa" ><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="carrinho_compra">
+                 <a  href="/BlushGlamour-carrinho"><i class="fa-solid fa-cart-shopping"></i></a><div id="carrinho">1</div>
+            </div>
+       </div>
+    </header>
+    <nav>
+        <!-- Barra lateral -->
+        <div id="barra-lateral">
+           <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
+           <div class="DadosPerfil">
+               <a href="/"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+               <a href="/">Nome do usuario</a>
+           </div>
+           <div class="conteuldoBarralateral">
+               <h1>BlushGlamour</h1>
+               <div><i class="fa fa-home"></i><a href="/">Home</a></div>
+           </div>
+           <nav class="conteuldoBarralateral">
+               <h1>Categorias</h1>
+               <div><a href="">Bases</a></div>
+               <div><a href="">Paletas</a></div>
+               <div><a href="">Pinceis</a></div>
+               <div><a href="">Delineadores</a></div>
+               <div><a href="">Batons</a></i></div>
+               <div><a href="">Rimels</a></div>
+           </nav>
+           <div class="conteuldoBarralateral">
+               <h1>Açoes</h1>
+               <div><i class="fa fa-user"></i><a href="/BlushGlamour-login">Login</a></div>
+               <div><i class="fa-solid fa-address-card"></i><a href="/BlushGlamour-cadastro">Cadastrar-se</a></div>
+               <div><i class="fa-solid fa-right-to-bracket"></i><a href="">Logout</a></div>
+           </div>
+       </div>
+       <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
+   </nav>
+       <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
+   </nav>
+    <main>
+        <section class="addProduto">
+            <figure>
+                <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
+            </figure>
+            <div class="produtoDescricao">
+                <div class="textoAddProduto">
+                    <h1>Base da Boca Rosa</h1>
+                    <h3>R$100</h3>
+                    <p>restam: 3</p>
+                </div>
+                <div class="botaoProduto">
+                    <button  type="submit" ><a href=""><i class="fa-solid fa-arrow-right"></i></a></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="{{ url_for('static', filename='imagens/Pagina_principal/BlushGlamour-footer.png') }}" alt="">
+        <div class="icones_rodape">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

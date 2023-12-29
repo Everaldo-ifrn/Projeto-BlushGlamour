@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: RedHatDisplay;
+    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+}
+@font-face {
+    font-family: RedHatDisplay;
+    /*UTILIZANDO SEM FLASK*/
+    src: url('/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+    /*UTILIZANDO COM FLASK*/
+}
+
+
+/*AQUI IREI MODELAR O MAIN*/
+main {
+    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+    max-width: 1440px;
+    height: 1000px;
+    margin: auto;
+    padding-top: 50px;
+
+}
+.formulario {
+    margin: auto;
+    max-width: 1000px;
+    height: 800px;
+    border-radius: 10px;
+    background-image: url('/static/imagens/Login_cadastro/cadastro-fornecedores.png');
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 5px 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 60px;
+}
+
+/*AQUI IREI MODELAR O FORMULARIO*/
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+fieldset {
+    border: none;
+}
+form > fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+form > fieldset > label {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+form > fieldset > input {
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #AEAEAE;
+    margin-bottom: 10px;
+}
+form > fieldset > h2 {
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: monospace;
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+/*Aqui irei modelar a parte do titulo*/
+.titulo {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.titulo > h1 {
+    margin-top: 30px;
+    font-size: 50px;
+    font-family: monospace;
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+/*Aqui irei modelar a parte do botao de voltar*/
+.botaoVoltar {
+    padding-top: 30px;
+}
+.botaoVoltar > a {
+    height: 50px;
+    width: 100px;
+    background-color: #E55E82;
+    border-radius: 50px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.botaoVoltar > a > i {
+    font-size: 30px;
+    color: white;
+}
+.botaoVoltar > a:hover  {
+    background-color: #F9A8C8;
+    transition-duration: 1s;
+}
+
+
+/*Aqui irei modelar o botao de entrar*/
+.botaoEntrar {
+    margin: auto;
+    margin-top: 200px;  
+}
+.botaoEntrar {
+    width: 300px;
+    height: 40px;
+    background-color: #E55E82;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.botaoEntrar:hover {
+    background-color: white;
+    border: 1px solid #E55E82;
+    color: #E55E82;
+    transition-duration: 1s;
+}
+
+
+
+
+
+/*AQUI IREI MODELAR A PARTE quando a tela estiver muito pequena*/
+
+@media only screen and (max-width: 1000px){
+    .formulario {
+        max-width: 800px;
+        height: 650px;
+        background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
+    }
+    /*AQUI IREI MODELAR O FORMULARIO*/
+    .titulo {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    form > fieldset {
+        width: 350px;
+    }
+    form > fieldset > input {
+        width: 300px;
+        height: 40px;
+    }
+    form > fieldset > h2 {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+    /*Aqui estou modelando os botoes*/
+    .botaoEntrar {
+        margin-top: 30px;  
+        margin-right: 48px;
+    }
+    .botaoVoltar > a {
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+    }
+    
+}
+
+
+/*MODELANDO: MAIN*/
+@media only screen and (max-width: 800px){
+    main {
+        max-width: 428px;
+        height: 1250px;
+    }
+    /*aqui estou modelndo a parte mobile do titulo do formuLario*/
+    .titulo {
+        margin-left: 25px;
+        margin-right: 30px;
+    }
+    .botaoVoltar > a {
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+    }
+    .titulo > h1 {
+        margin-top: 30px;
+        font-size: 35px;
+    }
+    /*aqui estou modelndo a parte mobile do conteudo do formuLario*/
+    .formulario {
+        max-width: 400px;
+        height: 1200px;
+        background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
+    }
+    form {
+        margin-left: 25px;
+
+    }
+    form > fieldset {
+        width: 400px;
+    }
+    form > fieldset > h2 {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    form > fieldset > input {
+        width: 350px;
+        height: 40px;
+    }
+     /*aqui estou modelando o botao de entrar do formuLarioe na versao mobile*/
+    .botaoEntrar {
+        margin-top: 100px;  
+    }
+   
+}
+  

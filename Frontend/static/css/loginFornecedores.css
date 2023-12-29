@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: RedHatDisplay;
+    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+}
+@font-face {
+    font-family: RedHatDisplay;
+    /*UTILIZANDO SEM FLASK*/
+    src: url('/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+    /*UTILIZANDO COM FLASK*/
+}
+
+
+/*AQUI IREI MODELAR O MAIN*/
+main {
+    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+    max-width: 1440px;
+    height: 1000px;
+    margin: auto;
+    padding-top: 50px;
+
+}
+.formulario {
+    margin: auto;
+    max-width: 1000px;
+    height: 800px;
+    border-radius: 10px;
+    background-image: url('/static/imagens/Login_cadastro/Login-fornecedores.png'); 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 5px 5px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 60px;
+}
+
+/*AQUI IREI MODELAR O FORMULARIO*/
+form {
+    height: 800px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+fieldset >  h1 {
+    margin-top: 85px;
+    font-size: 90px;
+    font-family: monospace;
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.caixasDeTexto {
+    margin-bottom: 35px;
+    margin-top: 90px;
+}
+.caixasDeTexto > label {
+ margin-bottom: 10px;   
+}
+.caixasDeTexto > input {
+    margin-bottom: 30px;
+    height: 40px;
+    width: 400px;
+    border-radius: 10px;
+    border: 1px solid #AEAEAE;
+}
+
+.esqueciSenha_enviar {
+    margin-bottom: 260px;
+}
+.esqueciSenha_enviar > a {
+    margin-bottom: 40px;
+    text-decoration: none;
+    font-size: 13px;
+    color: rgb(91, 91, 250);
+    text-align: center;
+}
+.esqueciSenha_enviar > a:hover {
+    color:  rgba(91, 91, 250, 0.596);
+}
+.esqueciSenha_enviar > input {
+    width: 300px;
+    height: 40px;
+   background-color: #E55E82;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.esqueciSenha_enviar > input:hover {
+    background-color: white;
+    border: 1px solid #E55E82;
+    color: #E55E82;
+    transition-duration: 1s;
+}
+
+
+
+/*AQUI IREI MODELAR O BOTAO DE VOLTAR*/
+.botaoVoltar {
+    padding-top: 30px;
+}
+.botaoVoltar > a {
+    height: 50px;
+    width: 100px;
+    background-color:#E55E82;
+    border-radius: 50px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.botaoVoltar > a > i {
+    font-size: 30px;
+    color: white;
+}
+.botaoVoltar > a:hover  {
+    background-color: #F9A8C8;
+    transition-duration: 1s;
+}
+
+
+
+/*AQUI IREI MODELAR A PARTE DO MOBILE*/
+@media only screen and (max-width: 1000px){
+
+    /*AQUI IREI MODELAR O FORMULARIO*/
+    .formulario {
+        max-width: 800px;
+        height: 600px;
+        background-image: url('/static/imagens/Login_cadastro/loginFornnecedor-1000px.png'); 
+    }
+    fieldset {
+        margin-right: 80px;
+    }
+    fieldset >  h1 {
+        margin-top: 85px;
+        font-size: 80px;
+    }
+    .caixasDeTexto {
+        margin-bottom: 30px;
+        margin-top: 40px;
+    }
+    .caixasDeTexto > input {
+        margin-bottom: 20px;
+        height: 40px;
+        width: 300px;
+    }
+    .esqueciSenha_enviar {
+        margin-bottom: 400px;
+    }
+    .esqueciSenha_enviar > input {
+        width: 300px;
+        height: 40px;
+    }
+    .esqueciSenha_enviar > a {
+        margin-bottom: 30px;
+    }
+       
+}
+
+
+@media only screen and (max-width: 800px){
+    main {
+        max-width: 428px;
+        height: 926px;
+    }
+    .formulario {
+        max-width: 400px;
+        height: 700px;
+    }
+    .caixasDeTexto > input {
+        height: 40px;
+        width: 350px;
+    }
+    fieldset {
+        margin-right: 0;
+    }
+}

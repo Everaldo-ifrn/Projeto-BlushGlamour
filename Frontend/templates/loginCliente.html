@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlushGlamour-Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/loginCliente.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
+</head>
+<body>
+    <main>
+        <div class="formulario">
+            <div class="botaoVoltar">
+                <a href="/"><i class="fa-solid fa-arrow-left-long"></i></a>
+            </div>
+            <form action="/BlushGlamour-login" method="POST">
+                <fieldset>
+                    <h1 class="login">Login</h1>
+                    <p class="aviso">{{ status }}</p>
+                </fieldset>
+                <fieldset class="caixasDeTexto">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Digite seu email">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+                </fieldset>
+                <fieldset class="esqueciSenha_enviar">
+                    <a href="/esqueciSenha">Esqueci a senha</a>
+                    <input type="submit" name="Entrar">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

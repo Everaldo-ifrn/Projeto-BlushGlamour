@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.MaisVendidos {
+    max-width: 1450px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrossel {
+    display: flex;
+    width: 1450px; /* 5 cards * 350px */
+    transition: transform 0.3s ease;
+    margin-bottom: 100px;
+  
+}
+.botoes {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+/*aqui irei modelar os cards*/
+.cardMaisVendido {
+    width: 350px;
+    height: 450px;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Garante que os cards não diminuam mais do que o especificado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #F9A8C8, #E55E82);
+    margin:0px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+.TituloCard {
+    color: white;
+}
+.imgCard > img{
+   height: 200px;
+   width: 200px;
+}
+.Valor_Botao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.Valor_Botao > button{
+    height: 60px;
+    width: 180px;
+    border-radius: 50px;
+    background-color: white;
+    color: #E55E82;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+.Valor_Botao > button:hover{
+    border:1px solid white;
+    color: white;
+    transition-duration: 1s;
+    background-color: #E55E82;
+}

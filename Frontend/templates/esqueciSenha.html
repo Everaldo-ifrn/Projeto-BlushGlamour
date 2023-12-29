@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlushGlamour-Alterar senha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/esqueciSenha.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
+</head>
+<body>
+    <main>
+        <section class="formulario">
+            <div class="botaoVoltar">
+                <a href="/BlushGlamour-login"><i class="fa-solid fa-arrow-left-long"></i></a>
+            </div>
+            <form action="/BlushGlamour-login" method="">
+                <fieldset>
+                    <h1 class="login">Nova senha</h1>
+                </fieldset>
+                <fieldset class="caixasDeTexto">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Digite seu email">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua nova senha">
+                    <label for="senha">Confirme a senha</label>
+                    <input type="password" name="novasenha" id="novasenha" placeholder="confirme sua nova senha">
+                </fieldset>
+                <fieldset class="esqueciSenha_enviar">
+                    <input type="submit" name="Entrar">
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

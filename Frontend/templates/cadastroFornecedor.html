@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlushGlamour-Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastroFornecedor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="formulario">
+            <section class="titulo">
+                <h1>Cadastrar-se</h1>
+                <div class="botaoVoltar">
+                    <a href="voltar"><i class="fa-solid fa-arrow-left-long"></i></a>
+                </div>
+            </section>
+            <form action="" method=""> 
+                <fieldset class="form_informacoesPessoais">
+                    <h2>Informações pessoais</h2>
+                    <label for="nome">Nome</label>
+                    <input type="text" placeholder="Digite seu nome" name="nome" id="nome">
+                    <label for="cnpj">CNPJ</label>
+                    <input type="text" placeholder="Digite seu CNPJ" name="cnpj" id="cnpj">
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="Digite seu Email"  name="email" id="email">
+                    <label for="senha">Senha</label>
+                    <input type="password" placeholder="Digite sua senha"  name="senha" id="senha">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" placeholder="Digite seu telefone"  name="telefone" id="telefone"> 
+                    <label for="data">Data de Nascimento</label>
+                    <input type="text" placeholder="Digite sua data de nascimento"  name="data" id="data">
+                </fieldset>
+                <fieldset class="form_endereco"> 
+                    <h2>Endereço</h2>
+                    <label for="rua">Rua</label>
+                    <input type="text" placeholder="Digite o nome da rua" name="rua" id="rua">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" placeholder="Digite o nome do bairro"  name="bairro" id="bairro">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" placeholder="Digite o nome da cidade"  name="cidade" id="cidade">
+                    <label for="estado">Estado</label>
+                    <input type="text" placeholder="Digite o nome do estado"  name="estado" id="estado"> 
+                    <label for="Cep">CEP</label>
+                    <input type="text" placeholder="Digite o CEP da sua cidade"  name="cep" id="cep">
+                    <input class="botaoEntrar" type="submit" name="Entrar">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

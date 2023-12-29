@@ -1,0 +1,555 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Importante para o dimensionamento correto */
+}
+
+body {
+    font-family: RedHatDisplay;
+    margin: 0 auto; 
+    padding: 0;
+    overflow-x: hidden; /* Evitar a barra de rolagem horizontal */
+}
+
+html {
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: RedHatDisplay;
+    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
+}
+
+/*========================================= BARRA LATERAL============================================*/
+#barra-lateral {
+    width: 350px;
+    height: 1024px;
+    position: fixed;
+    top: 0;
+    left: -350px; /* Inicialmente, a barra lateral está fora da tela */
+    background-color: #ffffff;
+    color: #000000;
+    transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
+    display: flex;
+    flex-direction: column;
+}
+/*Aqui estou modelando a parte do perfil do usuario*/
+.DadosPerfil {
+    display: flex;
+    background-color:rgba(229, 94, 130, 1);
+    height: 120px;
+    width: 350px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.DadosPerfil > p {
+    margin-left: 20px;
+    color: white;
+    font-size: 20px;
+}
+.DadosPerfil > a {
+    margin-left: 20px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.DadosPerfil > div > img {
+    border-radius: 100%;
+    margin-left: 20px;
+    border: 2px solid white;
+    
+}
+/*Aqui estou modelando a parte dos links*/
+.conteuldoBarralateral > h1 {
+    background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    margin-left: 5px;
+}
+.conteuldoBarralateral > div {
+    width: 350px;
+    border-bottom: 1px solid rgba(236, 202, 237, 1);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+   
+
+}
+.conteuldoBarralateral > div > a {
+    text-decoration: none;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.conteuldoBarralateral > div > i {
+    color: rgba(229, 94, 130, 1);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.conteuldoBarralateral > div > a:hover {
+    color: rgba(229, 94, 130, 1);
+    transition-duration: 0.5s;
+}
+
+/*Botao de abrir a barra lateral*/
+#toggle-btn {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+    border: none;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+/*Botao de fechar barra lateral*/
+.botaSair {
+    background-color: rgba(229, 94, 130, 1);
+    width: 350px;
+    display: flex;
+    justify-content: end;
+}
+.botaSair > a {
+    padding: 5px;
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 20px;
+   
+}
+/*=====================================FIM BARRA LATERAL============================================*/
+
+/*AQUI IREI COMEÇAR MODELAR A PAGINA*/
+/*HEADER*/
+header {
+    margin: auto;
+    height: 120px;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease;
+}
+.botao_logo {
+    display: flex;
+    align-items: center;
+}
+.carrinho_barraDePesquisa {
+    display: flex;
+    align-items: center;
+}
+.botao > button > i {
+    font-size: 30px;
+    color: #E55E82;
+}
+/*Aqui irei modelar a barra de pesquisa*/
+.barra_pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #AEAEAE;
+    border-radius: 50px; 
+}
+.barraPesquisa_Botao {
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+}
+.barraPesquisa_Botao > button{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: #E55E82;
+    font-size: 20px;
+    color: white;
+    border: none;
+    margin-left: 5px;
+}
+.barraPesquisa_Botao > button:hover {
+    background-color: white;
+    border:1px solid #E55E82;
+    color: #E55E82;
+    transition-duration: 0.5s;
+
+}
+.barra_pesquisa > i {
+    color: #E55E82;
+    margin-left: 10px;
+}
+.barra_pesquisa > input {
+  height: 30px;
+  width: 240px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+
+/*aqui irei modelar o icone do carrinho*/
+.carrinho_compra {
+    display: flex;
+}
+.icone_carrinho {
+    font-size: 30px;
+    color: #E55E82;
+}
+
+#carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color:#5ee55e;
+    border-radius: 100%;
+    margin-right: 30px;
+ }
+
+ /*AQUI IREI MODELAR AS MEDIAS QUERIES*/
+ @media only screen and (max-width: 800px){
+    /*Aqui irei modelar o header*/
+    header {
+        flex-wrap: wrap-reverse;
+        height: 200px;  
+        align-items: center;
+    }
+    .carrinho_barraDePesquisa{
+        justify-content: space-between;
+        width: 800px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 270px;
+        height: 40px;
+    }
+    .barra_pesquisa > input {
+        height: 30px;
+        width: 240px;
+    }
+    /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 20px;
+    }
+ }
+
+ /*para telas mobiles*/
+ @media only screen and (max-width: 500px){
+    /*aqui estou modelando o carrinho e a barra de pesquisa*/
+    /*Aqui irei modelar a barra de pesquisa*/
+    .barra_pesquisa {
+        width: 200px;
+        height: 40px;
+    }
+   /*aqui irei modelar o carrinho*/
+    #carrinho {
+        margin-right: 30px;
+    }
+ }
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.produto_mais_informacao{
+    max-width: 1300px; /* Define uma largura máxima para evitar excessos */
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+
+    align-items: center;
+}
+
+.produto > img{
+    max-width: 450px;
+}
+
+.informacao_produto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 520px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+
+.informacao_produto > div >  h2{
+    font-family: Merriweather Sans;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: linear-gradient(180deg, #EACEF2 0%, #F8ABCC 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.descricao_produto > h2{
+    font-family: Merriweather Sans;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: linear-gradient(180deg, #EACEF2 0%, #F8ABCC 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    max-width: 1030px;
+    margin: 16px 10px;
+}
+
+.descricao_produto > p{
+    max-width: 1030px;
+    margin: 16px 10px;
+}
+
+.informacao_produto > div > p, .informacao_produto > p, .quantidade_produto {
+    color: #000;
+    font-family: Red Hat Display;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#preco{
+    color: #000;
+    font-family: Red Hat Display;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.carrinho_mais_compra{
+    display: flex;
+    flex-direction: column;
+    max-width: 528px;   
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrinho{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9A8C8;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 250px;
+    height: 60px;
+    color: #E55E82;
+    text-decoration: none;
+    margin-top: 13px;
+    
+}
+
+.carrinho:hover{
+    background-color: #E55E82;
+    color: #F9A8C8;
+}
+
+.compra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E55E82;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 200px;
+    height: 60px;
+    color: #F9A8C8;
+    text-decoration: none;
+    font-family: Red Hat Display;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 13px;
+}
+
+.compra:hover{
+    background-color: #F9A8C8;
+    color: #E55E82;
+}
+
+.quantidade_produto{
+    display: flex;
+    justify-content: space-around;
+    max-width: 300px;
+    min-width: 250px;
+    align-items: center;
+}
+
+.quantidade_produto > input{
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #AEAEAE;
+}
+
+.quantidade_mais_carrinho{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 147px;
+    max-width: 300px;
+    min-width: 250px;
+}
+
+.produto_mais_informacao {
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.produto {
+    width: 100%;
+    max-width: 1119px;
+    height: 550px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+  
+
+  
+.informacao_produto > h2 {
+    font-family: Merriweather Sans;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: linear-gradient(180deg, #EACEF2 0%, #F8ABCC 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 820px) {
+    .produto {
+        flex-direction: column;
+        margin: 0; 
+    }
+
+    .produto img {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .produto {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+    }
+
+    .informacao_produto {
+        padding: 20px 0;
+    }
+
+    .descricao_produto {
+        margin-top: 215px;
+    }
+    
+    .carrinho_mais_compra{
+        margin-top: 20px auto;
+    }
+
+    .carrinho, .compra{
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
+
+.descricao_produto{
+    /*padding: 16px 44px; O PROBLEMA ESTÁ AQUI*/
+    max-width: 1200px;
+    border-radius: 20px;
+    border: 1px solid #E55E82;
+    margin-bottom: 117px;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1440px;
+    height: 400px;
+    margin: auto;
+    background: #E55E82; 
+}
+
+footer > img{
+    min-width: 150px;
+    max-width: 200px;
+    min-height: 125px;
+    max-height: 200px;
+}
+
+.icones_rodape > a:hover{
+    color: #F9A8C8;
+}
+.icones_rodape{
+    display: flex;
+    width: 100%;
+    justify-content:end;
+    margin-right: 5%;
+}
+
+.icones_rodape > a{
+    font-size: 50px;
+    color: white;
+    margin-left: 29px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .produto img {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .quantidade_mais_carrinho,
+    .carrinho_mais_compra {
+      width: 100%; /* Garante que ocupem toda a largura disponível */
+      max-width: unset; /* Remove a largura máxima para se ajustar à tela */
+    }
+  
+    .carrinho_mais_compra {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto; /* Permite altura dinâmica */
+    }
+
+}
