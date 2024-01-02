@@ -14,11 +14,15 @@ db = bd.linkarBancoDeDados()
 
 
 
-#PAGINA PRINCIPAL DO SITE
+#PAGINA PRINCIPAL DO SITE (Precisamos rever esta rota, devemos mostrar os dados do cliente)
 @app.route('/', methods=['GET', 'POST'])
 def homepage_blushGlamour():
    if request.method == 'GET':
-        return render_template('paginaPrincipal.html')
+        cliente = Cliente(email=None, senha=None, cpf=None, nome=None, telefone=None, dataNascimento=None, rua=None, cidade=None, cep=None, estado=None, NumeroResidencia=None, Complemento=None, bairro=None, imagemPerfil=None)
+        dadosCliente = cliente.dadosDoCliente(db)
+        print(dadosCliente)
+
+        return render_template('paginaPrincipal.html', dadosCliente=dadosCliente)
    elif request.method == 'POST':
         return redirect('/')
 
@@ -75,10 +79,16 @@ def cadastroCliente():
         bairro = request.form.get('bairro')
         NumeroResidencia = request.form.get('numeroResidencia')
         complemento = request.form.get('Complemento')
-        imagemPerfil = "imagem.jpg"
+        imagemPerfil = request.files.get('imgPerfil')
+
+        # Verificando a extensão do arquivo e salvando no lugar certo
+        extensao = imagemPerfil.filename.split('.', 1)[1]
+        caminhoImagem = f'Projeto-BlushGlamour/Frontend/static/imagens/usuarios/{nome}.{extensao}'
+        imagemPerfil.save(caminhoImagem)
+
 
         # esta classe serve para sempre linkar o banco de dados
-        cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, complemento, bairro, imagemPerfil)
+        cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, complemento, bairro, caminhoImagem)
         cliente.cadastrar(db)
 
         #criando sessao para o usuario apos o cadastro
@@ -157,13 +167,35 @@ def carrinho_compra():
 
 
 #PAGINA DO PRODUTO
-@app.route('/BlushGlamour-Produto',  methods=['GET', 'POST'])
-def pagina_produto():
+@app.route('/BlushGlamour-Produto/<int:codigoDeBarra>',  methods=['GET', 'POST'])
+def pagina_produto(codigoDeBarra):
    if request.method == 'GET':
-        return render_template('paginaProduto.html')
-   elif request.method == 'POST':
-        return redirect('/BlushGlamour-Produto')
+        #estou chamando a classe produto e o metodo de visualizar produto
+        produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+        verProduto = produto.detalhesDoProduto(db, codigoDeBarra)  
+        return render_template('paginaProduto.html', detalhesProduto=verProduto)
 
+        
+   elif request.method == 'POST':
+        #estou chamando a classe produto e o metodo de visualizar produto
+        produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+        verProduto = produto.detalhesDoProduto(db, codigoDeBarra)  
+        return render_template('paginaProduto.html', detalhesProduto=verProduto)
+
+
+
+
+#PAGINA DE CADASTRAR PRODUTO
+@app.route('/CadastroProdutos', methods=['GET', 'POST'])
+def CadastroProdutos():
+   if request.method == 'GET':
+        produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+        informacoesDoProduto = produto.verProdutos(db)
+        return render_template('cadastroProdutos.html', dicionario=informacoesDoProduto)
+        
+   elif request.method == 'POST':
+        #aqui tem que ter o codigo que vaiguardar os produtos no bd
+        return redirect('/CadastroProdutos')
 
 
 
@@ -174,7 +206,13 @@ def barra_Pesquisa():
    if request.method == 'GET':
         return render_template('barradePesquisa.html')
    elif request.method == 'POST':
-        return redirect('/pesquisa')
+         #estou pegando a palavra escrita pelo usuario para fazer a pesquisa
+         pesquisa = request.form.get('barraPesquisa')
+         
+         #estou chamando a classe produto e o metodo de pesquisa de produto
+         produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+         dicionarioDaPesquisa = produto.pesquisarProduto(db, pesquisa)
+         return render_template('barradePesquisa.html', dicionario=dicionarioDaPesquisa)
 
 
 
@@ -186,12 +224,12 @@ def logout():
    if request.method == 'GET':
         Cliente = Sessao(email=None)
         Cliente.finalizarSessao()
-        
+        print('cheguei')
         return render_template('paginaPrincipal.html')
    
    elif request.method == 'POST':
         return redirect('/')
-   
+   print('cheguei2')
 
 
 

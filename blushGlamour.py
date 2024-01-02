@@ -8,7 +8,7 @@ class BancoDeDados():
     def __init__(self):
         self.host = 'localhost'
         self.user = 'root'
-        self.password = 'labinfo'
+        self.password = 'felipe09'
         self.database = 'mydb'
         
     # Este método deve ser chamado toda vez que for usar o BD
@@ -76,17 +76,13 @@ class Pessoa:
             print(f"Erro ao inserir dados no banco de dados: {e}")
 
     def login(self, db):
-        try:
-            cursor = db.cursor(dictionary=True)
-            cursor.execute('SELECT senha, email FROM Cliente;') #Fazendo o select para pegar os dados do usuario
-            objetos =  cursor.fetchall()
-        except:
-            return 'Senha ou Email incorretos!'
-        
+        cursor = db.cursor(dictionary=True)
+        cursor.execute('SELECT senha, email FROM Cliente;') #Fazendo o select para pegar os dados do usuario
+        objetos =  cursor.fetchall()
+
         for dicionario in objetos: #estou verificando o dicionario que foi retornado e pegando o email e a senha
             emailDicionario = dicionario['email'] 
             senhaDicionario = dicionario['senha']
-            
             if  emailDicionario == self.email and senhaDicionario == self.senha:
                 break
 
@@ -97,8 +93,11 @@ class Pessoa:
             cursor.close()
             return 'Senha ou Email incorretos!'
 
-    def logout(): #Nao sei se vamos precisar disso, ja estou fazendo com a classe sessao
-        pass
+    def dadosDoCliente(self, db): #falta terminar(este metodo deve mostrar tudo relacionando ao cliente) este metodo tem que ser na classe cliente
+        cursor = db.cursor(dictionary=True)
+        cursor.execute("select * from Cliente WHERE cpf = %s;", (self.email,))
+        dicionario =  cursor.fetchall() #aqui estar sendo guardado a lista de dicionario que a consulta vai me retornar
+        return dicionario
 
     def atualizarDados():
         pass
@@ -130,14 +129,31 @@ class Produto:
         self.descrição = descrição
         self.categoriaID = categoria #A gente vai saber o ID porque vai ser um forms de bolinha para escolher entao o valor a gente ja vai saber
 
-    def adicionarProduto(self):
+    def cadastrarProduto(self):
         pass
 
     def atualizarProduto(self):
         pass
 
-    def visualizarProduto(self): #metodo para pegar os produtos e jogar nos cards etc
-        pass
+    def verProdutos(self, db):
+        cursor = db.cursor(dictionary=True)
+        cursor.execute('SELECT Produtos.codigoDeBarra, Produtos.nomeProduto, produtos.preco, produtos.quantidade_estoque, Categoria.nomeCategoria FROM Produtos INNER JOIN Categoria ON Produtos.Categoria_idcategoria = Categoria.idcategoria;')
+        dicionario =  cursor.fetchall() #aqui estar sendo guardado a lista de dicionario que a consulta vai me retornar
+        return dicionario
+
+    def pesquisarProduto(self, db, pesquisa):
+        self.pesquisa = pesquisa
+        cursor = db.cursor(dictionary=True)
+        cursor.execute("""SELECT Produtos.codigoDeBarra, Produtos.nomeProduto, produtos.preco, produtos.quantidade_estoque, Imagens.imgCard FROM Produtos INNER JOIN Imagens ON Produtos.codigoDeBarra = Imagens.Produtos_codigoDeBarra WHERE nomeProduto LIKE %s LIMIT 0, 1000;""", (f"%{pesquisa}%",))
+        dicionario =  cursor.fetchall() #aqui estar sendo guardado a lista de dicionario que a consulta vai me retornar
+        return dicionario
+   
+    def detalhesDoProduto(self, db, codigoDeBarras):
+        cursor = db.cursor(dictionary=True)
+        cursor.execute("""SELECT Produtos.codigoDeBarra, Produtos.nomeProduto, produtos.preco, produtos.quantidade_estoque, Produtos.descricao, Imagens.imgCard FROM Produtos INNER JOIN Imagens ON Produtos.codigoDeBarra = Imagens.Produtos_codigoDeBarra WHERE codigoDeBarra = %s;""", (codigoDeBarras,))
+        dicionario =  cursor.fetchall() #aqui estar sendo guardado a lista de dicionario que a consulta vai me retornar
+        print(dicionario)
+        return dicionario
 
 
 

@@ -19,7 +19,7 @@
                     <a href="/"><i class="fa-solid fa-arrow-left-long"></i></a>
                 </div>
             </section>
-            <form action="/BlushGlamour-cadastro" method="post">
+            <form action="/BlushGlamour-cadastro" method="post" enctype="multipart/form-data">
                 <fieldset class="form_informacoesPessoais">
                     <h2>Informações pessoais</h2>
                     <label for="nome">Nome</label>
@@ -35,7 +35,7 @@
                     <label for="data">Data de Nascimento</label>
                     <input type="text" placeholder="Digite sua data de nascimento"  name="data" id="data"  required>
                     <label for="imgPerfil">Imagem de perfil</label>
-                    <input class="uploadDeimagem" type="file" accept="image/*" name="imgPerfil" id="imgPerfil">
+                    <input class="uploadDeimagem" type="file" name="imgPerfil" id="imgPerfil">
                     
                 </fieldset>
                 <fieldset class="form_endereco"> 
@@ -54,7 +54,7 @@
                     <input type="text" placeholder="Digite o CEP da sua cidade"  name="cep" id="cep">
                     <label for="Complemento">Complemento</label>
                     <input type="text" placeholder="Digite um complemento(opcional)"  name="Complemento" id="Complemento">
-                    <input class="botaoEntrar" type="submit" name="Entrar">
+                    <input href="{{ url_for('homepage_blushGlamour', cpfCliente=cpf) }}" class="botaoEntrar" type="submit" name="Entrar">
                 </fieldset>
             </form>
         </div>

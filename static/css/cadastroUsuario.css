@@ -58,6 +58,11 @@ form > fieldset > input {
     border: 1px solid #AEAEAE;
     margin-bottom: 10px;
 }
+
+.uploadDeimagem{
+   height: 20px;
+}
+
 form > fieldset > h2 {
     margin-top: 10px;
     font-size: 30px;

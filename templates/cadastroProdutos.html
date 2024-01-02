@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastroProduto.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>{{ erro }}</h1> <!--Mensagem se algo der errado--> 
+        <div class="formulario">
+            <section class="titulo">
+                <h1>Cadastrar produto</h1>
+                <div class="botaoVoltar">
+                    <a href="/"><i class="fa-solid fa-arrow-left-long"></i></a>
+                </div>
+            </section>
+            <form action="/CadastroProdutos" method="post" enctype="multipart/form-data">
+                <fieldset class="form_informacoesPessoais">
+                    <h2>Informações do Produto</h2>
+                    <label for="cnpj">CNPJ do fornecedor</label>
+                    <input type="text" placeholder="Digite o CNPJ" name="cnpj" id="cnpj"  required>
+                    <label for="nomeProduto">Nome do produto</label>
+                    <input type="text" placeholder="Digite o nome do produto" name="nomeProduto" id="nomeProduto"  required>
+                    <label for="Codigo">Codigo de barra</label>
+                    <input type="text" placeholder="Digite o codigo de barra" name="codigo" id="codigo"  required>
+                    <label for="Descrição">Descrição</label>
+                    <textarea type="text" placeholder="Digite a Descrição"  name="Descrição" id="Descrição"  required></textarea>
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" placeholder="Insira a quantidade"  name="quantidade" id="quantidade">
+                    <label for="preco">Preço</label>
+                    <input type="text" placeholder="Digite o valor do produto"  name="preco" id="preco" required> 
+                    <label for="categoria">Selecione a Categoria</label>
+                    <select id="categoria" name="categoria">
+                        <option value="1">Base</option>
+                        <option value="2">Rimel</option>
+                        <option value="3">Delineador</option>
+                        <option value="4">Paletas</option>
+                        <option value="5">Batons</option>
+                        <option value="6">Pinceis</option>
+                    </select>
+                    <label for="imgProdutos">Imagem do produto</label>
+                    <input class="uploadDeimagem" type="file" name="imgProdutos" id="imgProdutos">
+                </fieldset>
+                <fieldset class="visualizarProdutos">
+                    <h2>Estoque</h2>
+                  
+                    <div class="estoque">
+                        {% for dadosDoProduto in dicionario %}
+                        <ul class="dadosProduto">
+                              <li><p>Nome: {{ dadosDoProduto.nomeProduto }}</p></li>
+                              <li><p>codigo de barra: {{ dadosDoProduto.codigoDeBarra }}</p></li>
+                              <li><p>Valor:  R${{ dadosDoProduto.preco }}</p></li>
+                              <li><p>Quantidade: {{  dadosDoProduto.quantidade_estoque }}</p></li>
+                              <li><p>Categoria: {{ dadosDoProduto.nomeCategoria }}</p></li>                                      
+                        </ul>
+                        {% endfor %}
+                    </div>
+                    
+                </fieldset>
+                <fieldset class="form_endereco"> 
+                    <input class="botaoEntrar" type="submit" name="Entrar">
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

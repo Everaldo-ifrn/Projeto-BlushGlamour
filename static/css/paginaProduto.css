@@ -3,22 +3,25 @@
     margin: 0;
     box-sizing: border-box; /* Importante para o dimensionamento correto */
 }
+@font-face {
+    font-family: RedHatDisplay;
+    /*UTILIZANDO SEM FLASK*/
+    src: url('/static/RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+    /*UTILIZANDO COM FLASK*/
+}
 
 body {
     font-family: RedHatDisplay;
     margin: 0 auto; 
     padding: 0;
     overflow-x: hidden; /* Evitar a barra de rolagem horizontal */
+   
 }
 
 html {
     margin: 0 auto;
 }
 
-@font-face {
-    font-family: RedHatDisplay;
-    src: url('RedHatDisplay/RedHatDisplay-VariableFont_wght.ttf');
-}
 
 /*========================================= BARRA LATERAL============================================*/
 #barra-lateral {
@@ -32,6 +35,7 @@ html {
     transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
     display: flex;
     flex-direction: column;
+    z-index: 3;
 }
 /*Aqui estou modelando a parte do perfil do usuario*/
 .DadosPerfil {
@@ -42,7 +46,7 @@ html {
     align-items: center;
     padding-bottom: 10px;
 }
-.DadosPerfil > p {
+.DadosPerfil > a {
     margin-left: 20px;
     color: white;
     font-size: 20px;
@@ -52,9 +56,9 @@ html {
     color: #ffffff;
     text-decoration: none;
 }
-.DadosPerfil > div > img {
+.DadosPerfil > a > div > img {
     border-radius: 100%;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 2px solid white;
     
 }
@@ -127,7 +131,7 @@ html {
 header {
     margin: auto;
     height: 120px;
-    max-width: 1440px;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -136,6 +140,7 @@ header {
     top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: box-shadow 0.3s ease;
+    z-index: 3;
 }
 .botao_logo {
     display: flex;
@@ -197,11 +202,10 @@ header {
 .carrinho_compra {
     display: flex;
 }
-.icone_carrinho {
+.fa-cart-shopping {
     font-size: 30px;
     color: #E55E82;
-}
-
+ }
 #carrinho {
     display: flex;
     align-items: center;
@@ -211,10 +215,10 @@ header {
     background-color:#5ee55e;
     border-radius: 100%;
     margin-right: 30px;
+    
  }
-
  /*AQUI IREI MODELAR AS MEDIAS QUERIES*/
- @media only screen and (max-width: 800px){
+ @media only screen and (max-width: 820px){
     /*Aqui irei modelar o header*/
     header {
         flex-wrap: wrap-reverse;
@@ -242,7 +246,6 @@ header {
         margin-right: 20px;
     }
  }
-
  /*para telas mobiles*/
  @media only screen and (max-width: 500px){
     /*aqui estou modelando o carrinho e a barra de pesquisa*/
@@ -253,11 +256,12 @@ header {
     }
    /*aqui irei modelar o carrinho*/
     #carrinho {
-        margin-right: 30px;
+        margin-right: 20px;
     }
  }
 
-main{
+
+ main{
     display: flex;
     justify-content: center;
 }
@@ -503,7 +507,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1440px;
+    max-width: 100%;
     height: 400px;
     margin: auto;
     background: #E55E82; 
