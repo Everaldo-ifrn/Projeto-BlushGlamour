@@ -11,6 +11,7 @@
 <body>
     <header></header>
     <main>
+        {{mensagem}}
         <div class="formulario">
             <section class="titulo">
                 <h1>Cadastrar-se</h1>
@@ -18,26 +19,26 @@
                     <a href="voltar"><i class="fa-solid fa-arrow-left-long"></i></a>
                 </div>
             </section>
-            <form action="" method=""> 
+            <form action="/BlushGlamour-CadastroFornecedores" method="post"> 
                 <fieldset class="form_informacoesPessoais">
                     <h2>Informações pessoais</h2>
                     <label for="nome">Nome</label>
-                    <input type="text" placeholder="Digite seu nome" name="nome" id="nome">
+                    <input type="text" placeholder="Digite seu nome" name="nome" id="nome" required>
                     <label for="cnpj">CNPJ</label>
-                    <input type="text" placeholder="Digite seu CNPJ" name="cnpj" id="cnpj">
+                    <input type="text" placeholder="Digite seu CNPJ" name="cnpj" id="cnpj" required>
                     <label for="email">Email</label>
-                    <input type="text" placeholder="Digite seu Email"  name="email" id="email">
+                    <input type="text" placeholder="Digite seu Email"  name="email" id="email" required>
                     <label for="senha">Senha</label>
-                    <input type="password" placeholder="Digite sua senha"  name="senha" id="senha">
+                    <input type="password" placeholder="Digite sua senha"  name="senha" id="senha" required>
                     <label for="telefone">Telefone</label>
-                    <input type="text" placeholder="Digite seu telefone"  name="telefone" id="telefone"> 
-                    <label for="data">Data de Nascimento</label>
-                    <input type="text" placeholder="Digite sua data de nascimento"  name="data" id="data">
+                    <input type="text" placeholder="Digite seu telefone"  name="telefone" id="telefone" required> 
                 </fieldset>
                 <fieldset class="form_endereco"> 
                     <h2>Endereço</h2>
                     <label for="rua">Rua</label>
                     <input type="text" placeholder="Digite o nome da rua" name="rua" id="rua">
+                    <label for="numero">Nº da Residencia</label>
+                    <input type="text" placeholder="Digite n° do imovel" name="numero" id="numero">
                     <label for="bairro">Bairro</label>
                     <input type="text" placeholder="Digite o nome do bairro"  name="bairro" id="bairro">
                     <label for="cidade">Cidade</label>

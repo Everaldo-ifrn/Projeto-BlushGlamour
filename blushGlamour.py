@@ -111,9 +111,26 @@ class Cliente(Pessoa):
         super().__init__(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, Complemento, bairro, imagemPerfil)
 
 class Fornecedor(Pessoa):
-    def __init__(self, cnpj, nome, email, senha, telefone, dataNascimento, rua=None, bairro=None, cidade=None, cep=None, estado=None, NumeroResidencia=None, Complemento=None):
+    def __init__(self, cnpj, nome, email, senha, telefone, dataNascimento=None, rua=None, bairro=None, cidade=None, cep=None, estado=None, NumeroResidencia=None, Complemento=None, imagemPerfil=None):
         super().__init__(cnpj, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, Complemento, bairro)
         self.cnpj = cnpj
+
+    def loginFornecedor(self):
+        pass
+
+    def cadastrarFornecedor(self, db):
+         #try:
+            cursor = db.cursor(dictionary=True)
+            cursor.execute("INSERT INTO Fornecedores (cnpj, nomeFornecedor, EmailFornecedor, senhaFornecedorl, telefoneFornecedor) VALUES (%s, %s, %s, %s, %s)", (self.cnpj, self.nome, self.email, self.senha, self.telefone))
+            cursor.execute("INSERT INTO EnderecosFornecedores (rua, cidade, cep, estado, numResidencia, cnpjFornecedores, bairro) VALUES (%s, %s, %s, %s, %s, %s, %s)", (self.rua, self.cidade, self.cep, self.estado, self.NumeroResidencia, self.cnpj, self.bairro))
+            db.commit()
+            cursor.close()
+        
+         #se caso der erro nas inserções
+         #except mysql.connector.Error as e:
+            #print(f"Erro ao inserir dados no banco de dados: {e}")
+            #return "Algo deu errado em seu cadastro tente novamente"
+         #return 'Entrou'
 
     def verificarEstoque(self):
         pass

@@ -116,7 +116,7 @@ form > fieldset > h2 {
 /*Aqui irei modelar o botao de entrar*/
 .botaoEntrar {
     margin: auto;
-    margin-top: 200px;  
+    margin-top: 100px;  
 }
 .botaoEntrar {
     width: 300px;
@@ -142,7 +142,7 @@ form > fieldset > h2 {
 @media only screen and (max-width: 1000px){
     .formulario {
         max-width: 800px;
-        height: 650px;
+        height: 700px;
         background-image: url('/static/imagens/Login_cadastro/fundo_branco.png');
     }
     /*AQUI IREI MODELAR O FORMULARIO*/

@@ -87,7 +87,7 @@ def cadastroCliente():
         imagemPerfil.save(caminhoImagem)
 
 
-        # esta classe serve para sempre linkar o banco de dados
+        # esta classe serve para pegar os dados de cliente e cadastrar utilizando o metodo cadastrar
         cliente = Cliente(cpf, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, complemento, bairro, caminhoImagem)
         cliente.cadastrar(db)
 
@@ -112,6 +112,9 @@ def login_Fornecedor():
     if request.method == 'GET':
         return render_template('loginFornecedores.html')
     elif request.method == 'POST':
+        
+
+
         return redirect('/BlushGlamour-Fornecedores')
 
 
@@ -123,9 +126,40 @@ def cadastro_Fornecedor():
    if request.method == 'GET':
         return render_template('cadastroFornecedor.html')
    elif request.method == 'POST':
-        return redirect('/BlushGlamour-CadastroFornecedores')
+        cnpj = request.form.get('cnpj')
+        nome = request.form.get('nome')
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+        telefone = request.form.get('telefone')
+        dataNascimento = request.form.get('data')
+        rua = request.form.get('rua')
+        cidade = request.form.get('cidade')
+        estado = request.form.get('estado')
+        numeroResidencia = request.form.get('numero')
+        cep = request.form.get('cep')
+        bairro = request.form.get('bairro')
+        imagemPerfil = "caminhoDaImagem.jpg"
+        
 
+        #Aqui irei cadastrar o fornecedor com o metodo cadastrar herdado da classe pessoa pela classe fornecedor
+        fornecedor = Fornecedor(cnpj, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, numeroResidencia, bairro, imagemPerfil)
+        fornecedorLogado = fornecedor.cadastrarFornecedor(db)
+        if  fornecedorLogado == "Algo deu errado em seu cadastro tente novamente":
+          return render_template('cadastroFornecedor.html', mensagem=fornecedorLogado)
+        elif fornecedorLogado == 'Entrou':
+          #criando sessao para o usuario apos o cadastro
+          try:
+               cliente = Sessao(email)
+               cliente.criarSessao()
+          except Exception as e:
+               print(f"Erro ao criar sessão: {e}")
+               return redirect('/BlushGlamour-cadastro')
+        
+        #caso tudo ocorra bem ele ira ser redirecionado para a pagina inicial
+        print(request.form)
+      
 
+      
 
 
 
