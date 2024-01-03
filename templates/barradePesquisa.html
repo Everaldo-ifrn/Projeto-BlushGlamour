@@ -74,10 +74,10 @@
    </nav>
    <div class="organizarFooterNoFimDaTeala">
         <main>
-            {% for dadosProdutos in dicionario%}
+            {% for dadosProdutos in dicionario %}
             <section class="addProduto">
                 <figure>
-                    <img src="{{ url_for('static', filename='imagens/produtos/Bases/') }}{{ dadosProdutos.imgCard }}" alt="">
+                    <img src="{{ url_for('static', filename='imagens/produtos/') }}{{ dadosProdutos.imgCard }}" alt="">
                 </figure>
                 <div class="produtoDescricao">
                     <div class="textoAddProduto">

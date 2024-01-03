@@ -8,7 +8,7 @@ class BancoDeDados():
     def __init__(self):
         self.host = 'localhost'
         self.user = 'root'
-        self.password = '#Candido2021'
+        self.password = 'felipe09'
         self.database = 'mydb'
         
     # Este método deve ser chamado toda vez que for usar o BD
@@ -115,22 +115,37 @@ class Fornecedor(Pessoa):
         super().__init__(cnpj, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, NumeroResidencia, Complemento, bairro)
         self.cnpj = cnpj
 
-    def loginFornecedor(self):
-        pass
+    def loginFornecedor(self, db):
+        cursor = db.cursor(dictionary=True)
+        cursor.execute('SELECT EmailFornecedor, senhaFornecedorl FROM Fornecedores;') #Fazendo o select para pegar os dados do Fornecedor
+        objetos =  cursor.fetchall()
+        
+        for dicionario in objetos: #estou verificando o dicionario que foi retornado e pegando o email e a senha
+            emailDicionario = dicionario['EmailFornecedor'] 
+            senhaDicionario = dicionario['senhaFornecedorl']
+            if  emailDicionario == self.email and senhaDicionario == self.senha:
+                break
+
+        if  emailDicionario == self.email and senhaDicionario == self.senha:
+            cursor.close()
+            return 'OK'
+        else:
+            cursor.close()
+            print('cheguei aqui')
+            return 'Senha ou Email incorretos!'
 
     def cadastrarFornecedor(self, db):
-         #try:
+         try:
             cursor = db.cursor(dictionary=True)
             cursor.execute("INSERT INTO Fornecedores (cnpj, nomeFornecedor, EmailFornecedor, senhaFornecedorl, telefoneFornecedor) VALUES (%s, %s, %s, %s, %s)", (self.cnpj, self.nome, self.email, self.senha, self.telefone))
             cursor.execute("INSERT INTO EnderecosFornecedores (rua, cidade, cep, estado, numResidencia, cnpjFornecedores, bairro) VALUES (%s, %s, %s, %s, %s, %s, %s)", (self.rua, self.cidade, self.cep, self.estado, self.NumeroResidencia, self.cnpj, self.bairro))
             db.commit()
             cursor.close()
-        
          #se caso der erro nas inserções
-         #except mysql.connector.Error as e:
-            #print(f"Erro ao inserir dados no banco de dados: {e}")
-            #return "Algo deu errado em seu cadastro tente novamente"
-         #return 'Entrou'
+         except mysql.connector.Error as e:
+            print(f"Erro ao inserir dados no banco de dados: {e}")
+            return "Algo deu errado em seu cadastro tente novamente"
+         return 'Entrou'
 
     def verificarEstoque(self):
         pass
