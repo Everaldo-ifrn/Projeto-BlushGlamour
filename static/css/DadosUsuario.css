@@ -116,12 +116,11 @@ body {
 /*=====================================FIM BARRA LATERAL============================================*/
 
 
-
-/*modelando o header*/
+/*HEADER*/
 header {
     margin: auto;
     height: 120px;
-    max-width: 1440px;
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -249,7 +248,6 @@ header {
         margin-right: 20px;
     }
  }
-
 /*setando toda a página*/
 
 main {
@@ -263,12 +261,15 @@ main {
     justify-content: center;
 }
 
+/*FOOTER*/
+/*setando toda a página*/
+
 footer{
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1440px;
+    max-width: 100%;
     height: 400px;
     background: #E55E82; 
 }
