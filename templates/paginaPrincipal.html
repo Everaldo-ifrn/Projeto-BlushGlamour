@@ -73,14 +73,17 @@
     </nav>
     <main>
         <!--Aqui voces continuam o codigo da pagina-->
+
+        <!-- detalhesProduto=verProduto -->
+
         <section class="anunciado"></section>
         <section class="MaisVendidos">
             <div class="TituloMaisVendidos"><h1>Queridinhos da loja</h1></div>
-            <div class="carrossel">
+            <div class="carrossel"> 
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
+                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                          <h1>R$100</h1>
                          <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
@@ -89,7 +92,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
+                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
@@ -98,7 +101,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
+                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
@@ -107,7 +110,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
+                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
@@ -116,7 +119,7 @@
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
                 <div class="cardMaisVendido">
                     <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
+                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
                     <div class="Valor_Botao">
                         <h1>R$100</h1>
                         <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
@@ -168,107 +171,28 @@
         <section class="produtos_para_vender">
             <div class="cards_Produtos_para_vender">
                 <!--CARD DO PRODUTO A VENDA-->
-                <div class="card_produto">
-                    <div class="dados_do_produto">
-                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
-                        <p>Nome do produto</p>
-                        <p>R$000.0</p>
-                    </div>
-                    <div class="interaçoes_card">
-                        <div class="interaçao_carrinho">
-                           <input type="number" min="1" max="50" name="quantidade" id="quantidade">
-                           <button><i class="fa fa-cart-shopping"></i></button>
+                {% if dadosProdutos | length == 0 %}
+                    <h1>Dicionário vazio!</h1>
+                {% else %}
+                    {% for linha in dadosProdutos %}
+                        <div class="card_produto">
+                            <div class="dados_do_produto">
+                                <img src="{{ url_for('static', filename='imagens/produtos/' + linha['imgCard']) }}" alt="">
+                                <p>{{ linha['nomeProduto'] }}</p>  <!-- Everaldo - TÁ DANDO ERRO PORQUE O imgCARD NO MEU BANCO TÁ NONE! -->
+                                <p>R${{ linha['preco'] }}</p>
+                            </div>
+                            <div class="interaçoes_card">
+                                <div class="interaçao_carrinho">
+                                <input type="number" min="1" max="{{ linha['quantidade_estoque'] }}" name="quantidade" id="quantidade">
+                                <button><i class="fa fa-cart-shopping"></i></button>
+                                </div>
+                                <div class="botao_comprar">
+                                    <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="botao_comprar">
-                            <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                <!--CARD DO PRODUTO A VENDA-->
-                <div class="card_produto">
-                    <div class="dados_do_produto">
-                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
-                        <p>Nome do produto</p>
-                        <p>R$000.0</p>
-                    </div>
-                    <div class="interaçoes_card">
-                        <div class="interaçao_carrinho">
-                           <input type="number" min="1" max="50" name="quantidade" id="quantidade">
-                           <button><i class="fa fa-cart-shopping"></i></button>
-                        </div>
-                        <div class="botao_comprar">
-                            <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                <!--CARD DO PRODUTO A VENDA-->
-                <div class="card_produto">
-                    <div class="dados_do_produto">
-                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
-                        <p>Nome do produto</p>
-                        <p>R$000.0</p>
-                    </div>
-                    <div class="interaçoes_card">
-                        <div class="interaçao_carrinho">
-                           <input type="number" min="1" max="50" name="quantidade" id="quantidade">
-                           <button><i class="fa fa-cart-shopping"></i></button>
-                        </div>
-                        <div class="botao_comprar">
-                            <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                <!--CARD DO PRODUTO A VENDA-->
-                <div class="card_produto">
-                    <div class="dados_do_produto">
-                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
-                        <p>Nome do produto</p>
-                        <p>R$000.0</p>
-                    </div>
-                    <div class="interaçoes_card">
-                        <div class="interaçao_carrinho">
-                           <input type="number" min="1" max="50" name="quantidade" id="quantidade">
-                           <button><i class="fa fa-cart-shopping"></i></button>
-                        </div>
-                        <div class="botao_comprar">
-                            <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                <!--CARD DO PRODUTO A VENDA-->
-                <div class="card_produto">
-                    <div class="dados_do_produto">
-                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
-                        <p>Nome do produto</p>
-                        <p>R$000.0</p>
-                    </div>
-                    <div class="interaçoes_card">
-                        <div class="interaçao_carrinho">
-                           <input type="number" min="1" max="50" name="quantidade" id="quantidade">
-                           <button><i class="fa fa-cart-shopping"></i></button>
-                        </div>
-                        <div class="botao_comprar">
-                            <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
-                        </div>
-                    </div>
-                </div>
-                <!--CARD DO PRODUTO A VENDA-->
-                <div class="card_produto">
-                    <div class="dados_do_produto">
-                        <img src="{{ url_for('static', filename='imagens/produtos/Bases/BaseBocaRosa01_semFundo.png') }}" alt="">
-                        <p>Nome do produto</p>
-                        <p>R$000.0</p>
-                    </div>
-                    <div class="interaçoes_card">
-                        <div class="interaçao_carrinho">
-                           <input type="number" min="1" max="50" name="quantidade" id="quantidade">
-                           <button><i class="fa fa-cart-shopping"></i></button>
-                        </div>
-                        <div class="botao_comprar">
-                            <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
+                {% endif %}
             </div>
         </section>
         <section class="Propagandas">

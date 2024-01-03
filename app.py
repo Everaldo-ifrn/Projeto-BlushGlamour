@@ -22,10 +22,12 @@ def homepage_blushGlamour():
         dadosCliente = cliente.dadosDoCliente(db)
         print(dadosCliente)
 
-        return render_template('paginaPrincipal.html', dadosCliente=dadosCliente)
+        produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+        dadosProduto = produto.verProdutos(db)
+
+        return render_template('paginaPrincipal.html', dadosCliente=dadosCliente, dadosProdutos=dadosProduto)
    elif request.method == 'POST':
         return redirect('/')
-
 
 
 
