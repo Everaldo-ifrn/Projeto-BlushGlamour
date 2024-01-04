@@ -36,6 +36,7 @@ class Sessao():
     def criarSessao(self):
         session['logado'] = self.verificar
         session['Email'] = self.email
+        return self.email
        
     def finalizarSessao(self):
         session.pop('logado', None)
