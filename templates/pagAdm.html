@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>página do adiministrador</title>
+    <!--PARA MEXE QUANDO ESTIVER SEM O FLASK(VOCÊ DEVE COLOCAR O CAMINHO DO SEU COMPUTADOR PARA FAZER QUAISQUER CORREÇÕES)
+    <link rel="stylesheet" href="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\css\paginaPrincipal.css">
+    <link rel="stylesheet" href="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\font-awesomw-2\fontawesome-free-6.4.2-web\css\all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="C:\Users\joao felipe\OneDrive\Documents\ESCOLA-FELIPE\IFRN CURSO PROGRAMAÇA\Projeto-BlushGlamour\Frontend\static\javaScript\carrossel.js"></script>
+    -->
+    <!--QUANDO ESTIVER UTILIZANDO FLASK-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pagAdm.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='javaScript/carrossel.js') }}"></script>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
+</head>
+<body>
+    <header>
+        <div class="botao_logo">
+            <div class="botao">
+                <button id="toggle-btn"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="logo">
+                <figure>
+                    <img src="{{ url_for('static', filename='imagens/Pagina_principal/Logo-BlushGlamour.png') }}" alt="">
+                </figure>
+            </div>
+        </div>
+    </header>
+    <nav>
+         <!-- Barra lateral -->
+         <div id="barra-lateral">
+            <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
+            <div class="DadosPerfil">
+                <a href="/"><div class="imagemPerfil"><img src="imagens/Pagina_principal/user.png" alt="" height="95px" width="95px"></div></a>
+                <a href="/">Nome do usuario</a>
+            </div>
+            <div class="conteuldoBarralateral">
+                <h1>BlushGlamour</h1>
+                <div><i class="fa fa-home"></i><a href="/">Home</a></div>
+            </div>
+            <nav class="conteuldoBarralateral">
+                <h1>Ações do fornecedor</h1>
+                <div><a href="">Ver Produto</a></div>
+                <div><a href="">Cadastrar Produto</a></div>
+            </nav>
+            <div class="conteuldoBarralateral">
+                <h1>Açoes</h1>
+                <div><i class="fa fa-user"></i><a href="/BlushGlamour-login">Login</a></div>
+                <div><i class="fa-solid fa-address-card"></i><a href="/BlushGlamour-cadastro">Cadastrar-se</a></div>
+                <div><i class="fa-solid fa-right-to-bracket"></i><a href="/logout">Logout</a></div>
+            </div>
+        </div>
+        <script src="javaScript/barraLateral.js"></script>
+    </nav>
+    <main>
+        <section class="imgParaadm">
+            <div class="imagemadm"></div>
+        </section>
+        <section class="produtos_para_vender">
+            <div class="cards_Produtos_para_vender">
+                <!--CARD DO PRODUTO A VENDA-->
+                <div class="card_produto">
+                    <div class="dados_do_produto">
+                        <p>Base da Boca Rosa</p>
+                        <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01.png') }}" alt="">
+                        <h4>Quantidade no Estoque: 300 qtds</h4>
+                    </div>
+                </div>
+                <!--CARD DO PRODUTO A VENDA-->
+                <!--CARD DO PRODUTO A VENDA-->
+                <div class="card_produto">
+                    <div class="dados_do_produto">
+                        <p>Base da Boca Rosa</p>
+                        <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01.png') }}" alt="">
+                        <h4>Quantidade no Estoque: 300 qtds</h4>
+                    </div>
+                </div>
+                <!--CARD DO PRODUTO A VENDA-->
+                <div class="card_produto">
+                    <div class="dados_do_produto">
+                        <p>Base da Boca Rosa</p>
+                        <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01.png') }}" alt="">
+                        <h4>Quantidade no Estoque: 300 qtds</h4>
+                    </div>
+                </div>
+                <!--CARD DO PRODUTO A VENDA-->
+                <div class="card_produto">
+                    <div class="dados_do_produto">
+                        <p>Base da Boca Rosa</p>
+                        <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01.png') }}" alt="">
+                        <h4>Quantidade no Estoque: 300 qtds</h4>
+                    </div>
+                </div>
+                <!--CARD DO PRODUTO A VENDA-->
+                <div class="card_produto">
+                    <div class="dados_do_produto">
+                        <p>Base da Boca Rosa</p>
+                        <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01.png') }}" alt="">
+                        <h4>Quantidade no Estoque: 300 qtds</h4>
+                    </div>
+                </div>
+                <!--CARD DO PRODUTO A VENDA-->
+                <div class="card_produto">
+                    <div class="dados_do_produto">
+                        <p>Base da Boca Rosa</p>
+                        <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01.png') }}" alt="">
+                        <h4>Quantidade no Estoque: 300 qtds</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <img src="imagens/Pagina_principal/BlushGlamour-footer.png" alt="">
+        <div class="icones_rodape">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+    </footer>
+</body>
+</html>
