@@ -81,7 +81,7 @@ def cadastroCliente():
         bairro = request.form.get('bairro')
         NumeroResidencia = request.form.get('numeroResidencia')
         complemento = request.form.get('Complemento')
-        imagemPerfil = request.files.get('imgPerfil')
+        imagemPerfil = request.files.get('imgPerfil') #ESTAMOS COM RPOBLEMAS NA IMAGEM
 
         # Verificando a extensão do arquivo e salvando no lugar certo
         extensao = imagemPerfil.filename.split('.', 1)[1]
@@ -107,27 +107,43 @@ def cadastroCliente():
     
 
         
-
+#OBS: PECISAMOS ORGANIZAR AS ROTAS PARA ONDE OS BOTOES IRAO LEVAR POIS AINDA NAO TEMOS A PAGINA DO FORNECEDOR
 #PAGINA DE LOGIN DO FORNECEDOR
-@app.route('/BlushGlamour-Fornecedores',  methods=['GET', 'POST'])
+@app.route('/BlushGlamour-LoginFornecedores',  methods=['GET', 'POST'])
 def login_Fornecedor():
-    if request.method == 'GET':
+      if request.method == 'GET':
         return render_template('loginFornecedores.html')
-    elif request.method == 'POST':
+      elif request.method == 'POST':
+        email = request.form.get('email')
+        senha = request.form.get('senha')
         
+        #chamando o metodo login
+        fornecedor = Fornecedor(email=email, senha=senha, cnpj=None, nome=None, telefone=None, dataNascimento=None, rua=None, cidade=None, cep=None, estado=None, NumeroResidencia=None, Complemento=None, bairro=None, imagemPerfil=None)
+        status = fornecedor.loginFornecedor(db)
+
+        #aqui vou criar uma sessao caso esteja tudo 
+        if status == 'OK':
+          #criando sessao para o usuario apos o cadastro
+          try:
+            cliente = Sessao(email)
+            cliente.criarSessao()
+            return redirect('/')
+            print('deu certo!')
+          except Exception as e:
+            print(f"Erro ao criar sessão: {e}")
+            return redirect('/BlushGlamour-LoginFornecedores')
+        else:
+          return render_template('loginFornecedores.html', mensagem=status)
 
 
-        return redirect('/BlushGlamour-Fornecedores')
 
-
-
-
+#OBS: PECISAMOS ORGANIZAR AS ROTAS PARA ONDE OS BOTOES IRAO LEVAR POIS AINDA NAO TEMOS A PAGINA DO FORNECEDOR
 #PAGINA DE CADASTRO DO FORNECEDOR
 @app.route('/BlushGlamour-CadastroFornecedores', methods=['GET', 'POST'])
 def cadastro_Fornecedor():
-   if request.method == 'GET':
+      if request.method == 'GET':
         return render_template('cadastroFornecedor.html')
-   elif request.method == 'POST':
+      elif request.method == 'POST':
         cnpj = request.form.get('cnpj')
         nome = request.form.get('nome')
         email = request.form.get('email')
@@ -144,20 +160,21 @@ def cadastro_Fornecedor():
         
 
         #Aqui irei cadastrar o fornecedor com o metodo cadastrar herdado da classe pessoa pela classe fornecedor
-        fornecedor = Fornecedor(cnpj, nome, email, senha, telefone, dataNascimento, rua, cidade, cep, estado, numeroResidencia, bairro, imagemPerfil)
+        fornecedor = Fornecedor(cnpj=cnpj, nome=nome, email=email, senha=senha, telefone=telefone, dataNascimento=None, rua=rua, cidade=cidade, cep=cep, estado=estado, NumeroResidencia=numeroResidencia, Complemento=None, bairro=bairro, imagemPerfil=None)
         fornecedorLogado = fornecedor.cadastrarFornecedor(db)
         if  fornecedorLogado == "Algo deu errado em seu cadastro tente novamente":
           return render_template('cadastroFornecedor.html', mensagem=fornecedorLogado)
+
         elif fornecedorLogado == 'Entrou':
           #criando sessao para o usuario apos o cadastro
           try:
                cliente = Sessao(email)
                cliente.criarSessao()
+               return redirect('/') #caso tudo ocorra bem ele ira ser redirecionado para a pagina inicial
           except Exception as e:
                print(f"Erro ao criar sessão: {e}")
                return redirect('/BlushGlamour-cadastro')
-        
-        #caso tudo ocorra bem ele ira ser redirecionado para a pagina inicial
+          
         print(request.form)
       
 
