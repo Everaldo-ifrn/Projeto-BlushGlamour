@@ -9,7 +9,6 @@
 </head>
 <body>
     <main>
-        <p style="text-align: center;">{{ mensagem }}</p>
         <div class="formulario">
             <div class="botaoVoltar">
                 <a href="voltar"><i class="fa-solid fa-arrow-left-long"></i></a>
@@ -17,6 +16,7 @@
             <form action="/BlushGlamour-LoginFornecedores" method="post">
                 <fieldset>
                     <h1 class="login">Login</h1>
+                    <p  style="text-align: center; color: red; margin-top: 10px;">{{ mensagem }}</p>
                 </fieldset>
                 <fieldset class="caixasDeTexto">
                     <label for="email">Email</label>
@@ -25,6 +25,7 @@
                     <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
                 </fieldset>
                 <fieldset class="esqueciSenha_enviar">
+                    <a href="">Cadastrar-se</a>
                     <a href="">Esqueci a senha</a>
                     <input type="submit" name="Enviar">
                 </fieldset>

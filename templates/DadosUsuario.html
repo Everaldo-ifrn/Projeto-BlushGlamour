@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css">
     -->
     <!--COM FLASK-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dadosUsuario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/DadosUsuario.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='javaScript/carrossel.js') }}"></script>    
     <link rel="stylesheet" href="{{ url_for('static', filename='font-awesomw-2/fontawesome-free-6.4.2-web/css/all.min.css') }}">
@@ -43,54 +43,102 @@
       <nav>
         <!-- Barra lateral -->
         <div id="barra-lateral">
-          <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
-          <div class="DadosPerfil">
-              <a href="/"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
-              <a href="/">Nome do usuario</a>
-          </div>
-          <div class="conteuldoBarralateral">
-              <h1>BlushGlamour</h1>
-              <div><i class="fa fa-home"></i><a href="/">Home</a></div>
-          </div>
-          <nav class="conteuldoBarralateral">
-              <h1>Categorias</h1>
-              <div><a href="">Bases</a></div>
-              <div><a href="">Paletas</a></div>
-              <div><a href="">Pinceis</a></div>
-              <div><a href="">Delineadores</a></div>
-              <div><a href="">Batons</a></i></div>
-              <div><a href="">Rimels</a></div>
-          </nav>
-          <div class="conteuldoBarralateral">
-              <h1>Açoes</h1>
-              <div><i class="fa fa-user"></i><a href="/BlushGlamour-login">Login</a></div>
-              <div><i class="fa-solid fa-address-card"></i><a href="/BlushGlamour-cadastro">Cadastrar-se</a></div>
-              <div><i class="fa-solid fa-right-to-bracket"></i><a href="">Logout</a></div>
-          </div>
-      </div>
-      <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
-    </nav>
+           <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
+           <div class="DadosPerfil">
+               {% if dadosCliente %}
+                   {% if dadosCliente[0]['imagemPerfil'] is not none %}
+                       <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename=dadosCliente[0]['imagemPerfil'].replace('static/', '')) }}" alt="" height="95px" width="95px"></div></a>
+                   {% else %}
+                       <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+                   {% endif %}
+               {% else %}
+                   <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+               {% endif %}
+              
+               {% if dadosCliente %}
+                   {% if dadosCliente[0]['nome'] is not none %}
+                       <a href="/BlushGlamour-Usuario"> {{ dadosCliente[0]['nome'] }}</a>
+                   {% else %}
+                       <a href="/BlushGlamour-Usuario">Nome do usuario</a>
+                   {% endif %}
+               {% else %}
+                   <a href="/BlushGlamour-Usuario">Nome do usuario</a>
+               {% endif %}
+           </div>
+           <div class="conteuldoBarralateral">
+               <h1>BlushGlamour</h1>
+               <div><i class="fa fa-home"></i><a href="/">Home</a></div>
+           </div>
+           <nav class="conteuldoBarralateral">
+               <h1>Categorias</h1>
+               <div><a href="">Bases</a></div>
+               <div><a href="">Paletas</a></div>
+               <div><a href="">Pinceis</a></div>
+               <div><a href="">Delineadores</a></div>
+               <div><a href="">Batons</a></i></div>
+               <div><a href="">Rimels</a></div>
+           </nav>
+           <div class="conteuldoBarralateral">
+               <h1>Açoes</h1>
+               <div><i class="fa fa-user"></i><a href="/BlushGlamour-login">Login</a></div>
+               <div><i class="fa-solid fa-address-card"></i><a href="/BlushGlamour-cadastro">Cadastrar-se</a></div>
+               <div><i class="fa-solid fa-right-to-bracket"></i><a href="/logout">Logout</a></div>
+           </div>
+       </div>
+       <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
+   </nav>
     <main>
         <section class="container_dados">
             <!--aqui é uma section de botoes-->
             <div class="reverseDados">
                 <div class="botoesUsuario">
                     <div><button href="">Alterar Meus Dados</button></div>
-                    <div><button href="">Sair</button></div>
+                    <div><button href="/logout">Sair</button></div>
                 </div>
                 <!--aqui é section da imagem e nome-->
                 <div class="imgNome">
-                    <div><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt=""></div>
-                    <h1>nome do Usuário</h1>
+                    {% if dadosCliente %}
+                        {% if dadosCliente[0]['imagemPerfil'] is not none %}
+                            <div class="imagemPerfil"><img src="{{ url_for('static', filename=dadosCliente[0]['imagemPerfil'].replace('static/', '')) }}" alt="" height="250px" width="250px"></div>
+                        {% else %}
+                            <div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="250px" width="250px"></div>
+                        {% endif %}
+                    {% else %}
+                        <div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="250px" width="250px"></div>
+                    {% endif %}
+              
+                    {% if dadosCliente %}
+                        {% if dadosCliente[0]['nome'] is not none %}
+                            <h1> {{ dadosCliente[0]['nome'] }}</h1>
+                        {% else %}
+                            <h1>Nome do usuario</h1>
+                        {% endif %}
+                    {% else %}
+                        <h1>Nome do usuario</h1>
+                    {% endif %}
                 </div>
             </div>
             <!--aqui é com as informações do usuario-->
             <div class="dadosUsuario">
                 <div class="textDados">
-                    <h2>Nome:</h2>
-                    <h2>Telefone:</h2>
-                    <h2>Cpf:</h2>
-                    <h2>Endereço:</h2>
+                    {% if dadosCliente %}
+                        {% if dadosCliente[0]['nome'] is not none %}
+                            <h2> Nome do Cliente: {{ dadosCliente[0]['nome'] }}</h2>
+                        {% else %}
+                            <h2>Nome do usuario</h2>
+                        {% endif %}
+                    {% else %}
+                        <h2>Nome do usuario</h2>
+                    {% endif %}
+                    {% if dadosCliente %}
+                        {% if dadosCliente[0]['cpf'] is not none %}
+                            <h2> CPF: {{ dadosCliente[0]['cpf'] }}</h2>
+                        {% else %}
+                            <h2>CPF:</h2>
+                        {% endif %}
+                    {% else %}
+                        <h2>CPF:</h2>
+                    {% endif %}
                 </div>
             </div>
         </section>

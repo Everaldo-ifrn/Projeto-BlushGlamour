@@ -69,17 +69,22 @@ class Pessoa:
             cursor.execute("INSERT INTO EnderecosCliente (rua, cidade, cep, estado, numResidencia, Complemento, Cliente_cpf, bairro) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", (self.rua, self.cidade, self.cep, self.estado, self.NumeroResidencia, self.Complemento, self.cpf, self.bairro))
             db.commit()
             cursor.close()
-        #se caso der erro nas inserções 
+        #se caso der erro nas inserções
         except mysql.connector.Error as e:
             print(f"Erro ao inserir dados no banco de dados: {e}")
-        #se caso der erro quando tentat duplicar dados UNIQUE 
-        except mysql.connector.Error as e:
-            print(f"Erro ao inserir dados no banco de dados: {e}")
+            return "Algo deu errado em seu cadastro tente novamente"
+        return 'Entrou'
+
+
 
     def login(self, db):
         cursor = db.cursor(dictionary=True)
         cursor.execute('SELECT senha, email FROM Cliente;') #Fazendo o select para pegar os dados do usuario
         objetos =  cursor.fetchall()
+
+        if not objetos:
+            cursor.close()
+            return 'Não há dados cadastrados!'
 
         for dicionario in objetos: #estou verificando o dicionario que foi retornado e pegando o email e a senha
             emailDicionario = dicionario['email'] 
@@ -94,9 +99,11 @@ class Pessoa:
             cursor.close()
             return 'Senha ou Email incorretos!'
 
+
+
     def dadosDoCliente(self, db): #falta terminar(este metodo deve mostrar tudo relacionando ao cliente) este metodo tem que ser na classe cliente
         cursor = db.cursor(dictionary=True)
-        cursor.execute("select * from Cliente WHERE cpf = %s;", (self.email,))
+        cursor.execute("select * from Cliente WHERE email = %s;", (self.email,))
         dicionario =  cursor.fetchall() #aqui estar sendo guardado a lista de dicionario que a consulta vai me retornar
         return dicionario
 
@@ -120,6 +127,10 @@ class Fornecedor(Pessoa):
         cursor = db.cursor(dictionary=True)
         cursor.execute('SELECT EmailFornecedor, senhaFornecedorl FROM Fornecedores;') #Fazendo o select para pegar os dados do Fornecedor
         objetos =  cursor.fetchall()
+
+        if not objetos:
+            cursor.close()
+            return 'Não há dados cadastrados!'
         
         for dicionario in objetos: #estou verificando o dicionario que foi retornado e pegando o email e a senha
             emailDicionario = dicionario['EmailFornecedor'] 

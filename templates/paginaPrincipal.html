@@ -46,8 +46,25 @@
          <div id="barra-lateral">
             <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
             <div class="DadosPerfil">
-                <a href="/"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
-                <a href="/">Nome do usuario</a>
+                {% if dadosCliente %}
+                    {% if dadosCliente[0]['imagemPerfil'] is not none %}
+                        <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename=dadosCliente[0]['imagemPerfil'].replace('static/', '')) }}" alt="" height="95px" width="95px"></div></a>
+                    {% else %}
+                        <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+                    {% endif %}
+                {% else %}
+                    <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+                {% endif %}
+               
+                {% if dadosCliente %}
+                    {% if dadosCliente[0]['nome'] is not none %}
+                        <a href="/BlushGlamour-Usuario"> {{ dadosCliente[0]['nome'] }}</a>
+                    {% else %}
+                        <a href="/BlushGlamour-Usuario">Nome do usuario</a>
+                    {% endif %}
+                {% else %}
+                    <a href="/BlushGlamour-Usuario">Nome do usuario</a>
+                {% endif %}
             </div>
             <div class="conteuldoBarralateral">
                 <h1>BlushGlamour</h1>
@@ -209,7 +226,7 @@
                     <div>
                         <p>O batom Bruna Tavares possui sua textura seca, tem fixação prolongada, secagem rápida e não escorre quando aplicado.</p>
                         <h1>Batom Bruna Tavares</h1>
-                        <button><a href="{{ url_for('pagina_produto', codigoDeBarra='17745') }}">Eu quero!</a></button>
+                        <button><a href="{{ url_for('pagina_produto', codigoDeBarra='112125') }}">Eu quero!</a></button>
                     </div>
                     <div></div>
                 </div>

@@ -48,7 +48,7 @@ fieldset {
     border: none;
 }
 fieldset >  h1 {
-    margin-top: 85px;
+    margin-top: 95px;
     font-size: 90px;
     font-family: monospace;
     background: linear-gradient(to bottom, #EACEF2,#F9A8C8);
@@ -64,7 +64,7 @@ fieldset >  h1 {
     text-align: center;
 }
 .caixasDeTexto {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     margin-top: 90px;
 }
 .caixasDeTexto > label {

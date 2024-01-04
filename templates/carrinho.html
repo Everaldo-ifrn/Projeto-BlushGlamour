@@ -45,8 +45,25 @@
         <div id="barra-lateral">
            <div class="botaSair"><a href="#" id="fechar-btn"><i class="fa fa-xmark"></i></a></div>
            <div class="DadosPerfil">
-               <a href="/"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
-               <a href="/">Nome do usuario</a>
+               {% if dadosCliente %}
+                   {% if dadosCliente[0]['imagemPerfil'] is not none %}
+                       <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename=dadosCliente[0]['imagemPerfil'].replace('static/', '')) }}" alt="" height="95px" width="95px"></div></a>
+                   {% else %}
+                       <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+                   {% endif %}
+               {% else %}
+                   <a href="/BlushGlamour-Usuario"><div class="imagemPerfil"><img src="{{ url_for('static', filename='imagens/Pagina_principal/user.png') }}" alt="" height="95px" width="95px"></div></a>
+               {% endif %}
+              
+               {% if dadosCliente %}
+                   {% if dadosCliente[0]['nome'] is not none %}
+                       <a href="/BlushGlamour-Usuario"> {{ dadosCliente[0]['nome'] }}</a>
+                   {% else %}
+                       <a href="/BlushGlamour-Usuario">Nome do usuario</a>
+                   {% endif %}
+               {% else %}
+                   <a href="/BlushGlamour-Usuario">Nome do usuario</a>
+               {% endif %}
            </div>
            <div class="conteuldoBarralateral">
                <h1>BlushGlamour</h1>
@@ -68,8 +85,6 @@
                <div><i class="fa-solid fa-right-to-bracket"></i><a href="/logout">Logout</a></div>
            </div>
        </div>
-       <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
-   </nav>
        <script src="{{ url_for('static', filename='javaScript/barraLateral.js') }}"></script>
    </nav>
     <main>
