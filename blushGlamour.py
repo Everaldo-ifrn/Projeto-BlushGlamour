@@ -8,7 +8,7 @@ class BancoDeDados():
     def __init__(self):
         self.host = 'localhost'
         self.user = 'root'
-        self.password = 'felipe09'
+        self.password = 'labinfo'
         self.database = 'mydb'
         
     # Este método deve ser chamado toda vez que for usar o BD
