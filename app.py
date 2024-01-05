@@ -27,8 +27,9 @@ def homepage_blushGlamour():
        
         produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
         dadosProduto = produto.verProdutos(db)
+        produtosMaisVendidos = produto.verProdutosMaisVendidos(db)
 
-        return render_template('paginaPrincipal.html', dadosCliente=dadosCliente, dadosProdutos=dadosProduto)
+        return render_template('paginaPrincipal.html', dadosCliente=dadosCliente, dadosProdutos=dadosProduto, produtosMaisVendidos=produtosMaisVendidos)
    elif request.method == 'POST':
         return redirect('/')
 

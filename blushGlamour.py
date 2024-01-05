@@ -8,7 +8,7 @@ class BancoDeDados():
     def __init__(self):
         self.host = 'localhost'
         self.user = 'root'
-        self.password = 'labinfo'
+        self.password = '#Candido2021'
         self.database = 'mydb'
         
     # Este método deve ser chamado toda vez que for usar o BD
@@ -178,6 +178,12 @@ class Produto:
 
     def atualizarProduto(self):
         pass
+
+    def verProdutosMaisVendidos(self, db): #      Everaldo - PAREI AQUI!
+        cursor = db.cursor(dictionary=True)
+        cursor.execute('SELECT p.codigoDeBarra, p.nomeProduto, p.descricao, p.preco, MAX(i.imgMaisVendido) as imgMaisVendido, SUM(chp.quantidade) as total_vendido FROM Vendas v INNER JOIN Carrinho c ON v.carrinhoID = c.carrinhoID INNER JOIN Carrinho_has_Produtos chp ON c.CarrinhoID = chp.Carrinho_carrinhoID INNER JOIN Produtos p ON chp.Produtos_codigoDeBarra = p.codigoDeBarra INNER JOIN Imagens i ON i.Produtos_codigoDeBarra = p.codigoDeBarra GROUP BY p.codigoDeBarra LIMIT 5;')
+        dicionario =  cursor.fetchall() #aqui estar sendo guardado a lista de dicionario que a consulta vai me retornar
+        return dicionario
 
     def verProdutos(self, db):
         cursor = db.cursor(dictionary=True)

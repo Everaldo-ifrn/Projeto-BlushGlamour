@@ -98,50 +98,16 @@
             <div class="TituloMaisVendidos"><h1>Queridinhos da loja</h1></div>
             <div class="carrossel"> 
                 <!---CARD DE PRODUTO MAIS VENDIDO-->
-                <div class="cardMaisVendido">
-                    <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
-                    <div class="Valor_Botao">
-                         <h1>R$100</h1>
-                         <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
-                    </div> 
-                </div>
-                <!---CARD DE PRODUTO MAIS VENDIDO-->
-                <div class="cardMaisVendido">
-                    <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
-                    <div class="Valor_Botao">
-                        <h1>R$100</h1>
-                        <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
-                    </div> 
-                </div>
-                <!---CARD DE PRODUTO MAIS VENDIDO-->
-                <div class="cardMaisVendido">
-                    <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
-                    <div class="Valor_Botao">
-                        <h1>R$100</h1>
-                        <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
-                    </div> 
-                </div>
-                <!---CARD DE PRODUTO MAIS VENDIDO-->
-                <div class="cardMaisVendido">
-                    <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
-                    <div class="Valor_Botao">
-                        <h1>R$100</h1>
-                        <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
-                    </div> 
-                </div>
-                <!---CARD DE PRODUTO MAIS VENDIDO-->
-                <div class="cardMaisVendido">
-                    <div class="TituloCard"><h1>NOME</h1></div>
-                    <figure class="imgCard">  <img src="{{ url_for('static', filename='imagens/produtos/BaseBocaRosa01_semFundo.png') }}" alt=""></figure>
-                    <div class="Valor_Botao">
-                        <h1>R$100</h1>
-                        <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
-                    </div> 
-                </div>
+                {% for linha in produtosMaisVendidos %}
+                    <div class="cardMaisVendido">
+                        <div class="TituloCard"><h1>{{linha['nomeProduto']}}</h1></div>
+                        <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/' + linha['imgMaisVendido']) }}" alt=""></figure>
+                        <div class="Valor_Botao">
+                            <h1>{{linha['preco']}}</h1>
+                            <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
+                        </div> 
+                    </div>
+                {% endfor %}
             </div>
             <button id="prev" class="botoes"><i class="fa-solid fa-arrow-left"></i></button>
             <button id="next" class="botoes"><i class="fa-solid fa-arrow-right"></i></button>
@@ -188,28 +154,24 @@
         <section class="produtos_para_vender">
             <div class="cards_Produtos_para_vender">
                 <!--CARD DO PRODUTO A VENDA-->
-                {% if dadosProdutos | length == 0 %}
-                    <h1>Dicionário vazio!</h1>
-                {% else %}
-                    {% for linha in dadosProdutos %}
-                        <div class="card_produto">
-                            <div class="dados_do_produto">
-                                <img src="{{ url_for('static', filename='imagens/produtos/' + linha['imgCard']) }}" alt="Não há imagem">
-                                <p>{{ linha['nomeProduto'] }}</p>  <!-- Everaldo - TÁ DANDO ERRO PORQUE O imgCARD NO MEU BANCO TÁ NONE! -->
-                                <p>R${{ linha['preco'] }}</p>
+                {% for linha in dadosProdutos %}
+                    <div class="card_produto">
+                        <div class="dados_do_produto">
+                            <img src="{{ url_for('static', filename='imagens/produtos/' + linha['imgCard']) }}" alt="Não há imagem">
+                            <p>{{ linha['nomeProduto'] }}</p>  <!-- Everaldo - TÁ DANDO ERRO PORQUE O imgCARD NO MEU BANCO TÁ NONE! -->
+                            <p>R${{ linha['preco'] }}</p>
+                        </div>
+                        <div class="interaçoes_card">
+                            <div class="interaçao_carrinho">
+                            <input type="number" min="1" max="{{ linha['quantidade_estoque'] }}" name="quantidade" id="quantidade">
+                            <button><i class="fa fa-cart-shopping"></i></button>
                             </div>
-                            <div class="interaçoes_card">
-                                <div class="interaçao_carrinho">
-                                <input type="number" min="1" max="{{ linha['quantidade_estoque'] }}" name="quantidade" id="quantidade">
-                                <button><i class="fa fa-cart-shopping"></i></button>
-                                </div>
-                                <div class="botao_comprar">
-                                    <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
-                                </div>
+                            <div class="botao_comprar">
+                                <button onclick="window.location.href='/BlushGlamour-carrinho'" >Comprar</button>
                             </div>
                         </div>
-                    {% endfor %}
-                {% endif %}
+                    </div>
+                {% endfor %}
             </div>
         </section>
         <section class="Propagandas">
