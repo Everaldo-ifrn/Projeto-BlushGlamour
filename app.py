@@ -253,6 +253,64 @@ def carrinho_compra():
 
 
 
+
+#PAGINA DA CATEGORIA
+@app.route('/categoria/<string:tipo>', methods=['GET', 'POST'])
+def categoria(tipo):
+     if request.method == 'GET':
+          if tipo == 'bases':
+               nomeImagem = 'categoria_Bases'
+               categoria = 1
+               nomeImagem = 'categoria_Bases'
+               produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+               status = produto.verPorCategoria(db, categoria)
+               print(status)
+               return render_template('PaginaCategoria.html', dicionario=status, nomeImagem=nomeImagem)
+
+          if tipo == 'batons':
+               nomeImagem = 'Categoria_Batom'
+               categoria = 2
+               produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+               status = produto.verPorCategoria(db, categoria)
+               print(status)
+               return render_template('PaginaCategoria.html', dicionario=status, nomeImagem=nomeImagem)
+
+          if tipo == 'paletas':
+               nomeImagem = 'Categoria_Paleta'
+               categoria = 3
+               produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+               status = produto.verPorCategoria(db, categoria)
+               print(status)
+               return render_template('PaginaCategoria.html', dicionario=status, nomeImagem=nomeImagem)
+
+          if tipo == 'pinceis':
+               nomeImagem = 'Categoria_Pinceis'
+               categoria = 6
+               produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+               status = produto.verPorCategoria(db, categoria)
+               print(status)
+               return render_template('PaginaCategoria.html', dicionario=status, nomeImagem=nomeImagem)
+           
+          if tipo == 'rimel':
+               nomeImagem = 'Categoria_Rimel'
+               categoria = 4
+               produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+               status = produto.verPorCategoria(db, categoria)
+               print(status)
+               return render_template('PaginaCategoria.html', dicionario=status, nomeImagem=nomeImagem)
+
+          if tipo == 'delineador':
+               nomeImagem = 'Categoria_Delineador'
+               categoria = 5
+               produto = Produto(codigoDeBarra=None, nomeProduto=None, preço=None, quantidade=None, categoria=None, caminhoImagem=None, descrição=None)
+               status = produto.verPorCategoria(db, categoria)
+               print(status)
+               return render_template('PaginaCategoria.html', dicionario=status, nomeImagem=nomeImagem)
+
+
+
+
+
 #PAGINA DO PRODUTO
 @app.route('/BlushGlamour-Produto/<int:codigoDeBarra>',  methods=['GET', 'POST'])
 def pagina_produto(codigoDeBarra):

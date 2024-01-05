@@ -8,7 +8,7 @@ class BancoDeDados():
     def __init__(self):
         self.host = 'localhost'
         self.user = 'root'
-        self.password = '#Candido2021'
+        self.password = 'felipe09'
         self.database = 'mydb'
         
     # Este método deve ser chamado toda vez que for usar o BD
@@ -205,6 +205,12 @@ class Produto:
         print(dicionario)
         return dicionario
 
+    def verPorCategoria(self, db, categoria):
+        cursor = db.cursor(dictionary=True)
+        cursor.execute("""SELECT Produtos.codigoDeBarra, Produtos.nomeProduto, produtos.preco, produtos.quantidade_estoque, Produtos.descricao, Imagens.imgCard FROM Produtos INNER JOIN Imagens ON Produtos.codigoDeBarra = Imagens.Produtos_codigoDeBarra WHERE Categoria_idcategoria = %s;""", (categoria,))
+        dicionario =  cursor.fetchall() #aqui estar sendo guardado a lista de dicionario que a consulta vai me retornar
+        print(dicionario)
+        return dicionario
 
 
 class Carrinho():

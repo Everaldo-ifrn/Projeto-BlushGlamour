@@ -72,12 +72,12 @@
             </div>
             <nav class="conteuldoBarralateral">
                 <h1>Categorias</h1>
-                <div><a href="">Bases</a></div>
-                <div><a href="">Paletas</a></div>
-                <div><a href="">Pinceis</a></div>
-                <div><a href="">Delineadores</a></div>
-                <div><a href="">Batons</a></i></div>
-                <div><a href="">Rimels</a></div>
+                <div><a href="{{ url_for('categoria', tipo='bases') }}">Bases</a></div>
+                <div><a href="{{ url_for('categoria', tipo='batons') }}">Batons</a></div>
+                <div><a href="{{ url_for('categoria', tipo='paletas') }}">Paletas</a></div>
+                <div><a href="{{ url_for('categoria', tipo='pinceis') }}">Pinceis</a></div>
+                <div><a href="{{ url_for('categoria', tipo='rimel') }}">Rimel</a></div>
+                <div><a href="{{ url_for('categoria', tipo='delineador') }}">Delineador</a></div>
             </nav>
             <div class="conteuldoBarralateral">
                 <h1>Açoes</h1>
@@ -118,35 +118,35 @@
                 <div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Base.png') }}" alt=""></a>
-                        <div><a href="">Bases</a></div>
+                        <a href="{{ url_for('categoria', tipo='bases') }}"><img src="{{ url_for('static', filename='imagens/Pagina_principal/Base.png') }}" alt=""></a>
+                        <div><a href="{{ url_for('categoria', tipo='bases') }}">Bases</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Batom.png') }}" alt=""></a>
-                        <div><a href="">Batons</a></div>
+                        <a href="{{ url_for('categoria', tipo='batons') }}"><img src="{{ url_for('static', filename='imagens/Pagina_principal/Batom.png') }}" alt=""></a>
+                        <div><a href="{{ url_for('categoria', tipo='batons') }}">Batons</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Paleta.png') }}" alt=""></a>
-                        <div><a href="">Paletas</a></div>
+                        <a href="{{ url_for('categoria', tipo='paletas') }}"><img src="{{ url_for('static', filename='imagens/Pagina_principal/Paleta.png') }}" alt=""></a>
+                        <div><a href="{{ url_for('categoria', tipo='paletas') }}">Paletas</a></div>
                     </div>
                 </div>
                 <div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Pincel.png') }}" alt=""></a>
-                        <div><a href="">Pinceis</a></div>
+                        <a href="{{ url_for('categoria', tipo='pinceis') }}"><img src="{{ url_for('static', filename='imagens/Pagina_principal/Pincel.png') }}" alt=""></a>
+                        <div><a href="{{ url_for('categoria', tipo='pinceis') }}">Pinceis</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Delineador.png') }}" alt=""></a>
-                        <div><a href="">Delineadores</a></div>
+                        <a href="{{ url_for('categoria', tipo='rimel') }}"><img src="{{ url_for('static', filename='imagens/Pagina_principal/Rimel.png') }}" alt=""></a>
+                        <div><a href="{{ url_for('categoria', tipo='rimel') }}">Rimel</a></div>
                     </div>
                     <!--CARD DO ENCONTRE POR CATEGORIA-->
                     <div class="card_Encontre_por_categoria">
-                        <a href=""><img src="{{ url_for('static', filename='imagens/Pagina_principal/Rimel.png') }}" alt=""></a>
-                        <div><a href="">Rimels</a></div>
+                        <a href="{{ url_for('categoria', tipo='delineador') }}"><img src="{{ url_for('static', filename='imagens/Pagina_principal/Delineador.png') }}" alt=""></a>
+                        <div><a href="{{ url_for('categoria', tipo='delineador') }}">Delineador</a></div>
                     </div>
                 </div>
             </nav>
