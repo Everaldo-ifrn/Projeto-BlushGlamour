@@ -2,9 +2,11 @@ USE `mydb`;
 
 
 #ISTO FOI PARA PODE UTILIZAR NO MEU PC JA QUE NAO RODEI O BD NOVO
+/*
 ALTER TABLE Produtos DROP FOREIGN KEY cnpjFornecedor;
 ALTER TABLE Produtos DROP INDEX cnpjFornecedor_UNIQUE;
 ALTER TABLE Produtos ADD CONSTRAINT nome_da_chave_estrageira FOREIGN KEY (cnpjFornecedor) REFERENCES Fornecedores(cnpj);
+*/
 
 
 INSERT INTO Fornecedores (cnpj, nomeFornecedor, EmailFornecedor, senhaFornecedorl, telefoneFornecedor) VALUES
@@ -12,9 +14,6 @@ INSERT INTO Fornecedores (cnpj, nomeFornecedor, EmailFornecedor, senhaFornecedor
     
 INSERT INTO EnderecosFornecedores (rua, cidade, cep, estado, numResidencia, cnpjFornecedores, bairro) VALUES
 	('a', 'a', '45645', 'a', '12', '12345678901234', 'a');
-
-
-
 
 -- Inserção na tabela Categoria
 INSERT INTO Categoria (nomeCategoria, descricaoCategoria) VALUES 
@@ -25,13 +24,13 @@ INSERT INTO Categoria (nomeCategoria, descricaoCategoria) VALUES
 	('Delineador', 'Produto utilizado para traçar linhas precisas ao redor dos olhos, disponível em formatos líquido, gel ou lápis para criar looks variados, desde sutis até dramáticos.'),
 	('Pincel', 'Ferramenta essencial para aplicar e esfumar produtos de maquiagem, disponível em diferentes formatos e tamanhos para atender às diversas necessidades de aplicação.');
 
-
  #O INSERT DE ALGUNS PRODUTOS(OBS: OS DOIS SAO JUNTOS< O DE BAIXO SAO AS IMAGENS DE CADA UM DESSE PRODUTOS A SEGUIR)
 INSERT INTO Produtos (codigoDeBarra, nomeProduto, preco, quantidade_estoque, descricao, Categoria_idcategoria, cnpjFornecedor) VALUES
 	(17745, 'Base Bruna tavares', 50.50, 50, 'Base Bruna Tavares é uma base de alta cobertura e longa duração.', 1, '12345678901234'),
 	(16645, 'Base Boca rosa', 25.50, 100, 'Base Boca Rosa é ideal para uma cobertura leve a média.', 1, '12345678901234'),
     (18845, 'Base Nina ', 80.50, 10, 'Base Nina oferece um acabamento matte perfeito para peles oleosas.', 1, '12345678901234'),
     (19945, 'Base Mari', 100.50, 70, 'Base Mari é reconhecida por sua fórmula hidratante e cobertura natural.', 1, '12345678901234');
+    
 #O INSERT DE ALGUNS PRODUTOS(OBS: OS DOIS SAO JUNTOS< O DE BAIXO SAO AS IMAGENS DE CADA UM DESSE PRODUTOS A SEGUIR)
 INSERT INTO Produtos (codigoDeBarra, nomeProduto, preco, quantidade_estoque, descricao, Categoria_idcategoria, cnpjFornecedor) VALUES
 	(110105, 'Delineador Mari', 50.50, 50, 'O Delineador Mari possui uma fórmula à prova d''água e um aplicador preciso para criar looks deslumbrantes.', 5, '12345678901234'),
@@ -56,4 +55,26 @@ INSERT INTO Imagens (idImagens, Produtos_codigoDeBarra, imgCard, imgMaisVendido,
 	(9, 114145, 'BatomMerubyr01.png', 'BatomMerubyr01.png', 'BatomMerubyr01.png'),
 	(10, 115155, 'BaseDior02_semFundo.png', 'BaseDior02_semFundo.png', 'BaseDior02_semFundo.png');
 
+-- Inserção na tabela Cliente
+INSERT INTO Cliente (cpf, nome, email, senha, dataNascimento, imagemPerfil)
+VALUES ('12345678901', 'Maria S.ilva', 'maria@email.com', 'senha123', '1990-05-15', 'perfil.jpg');
 
+-- Inserção na tabela EnderecosCliente
+INSERT INTO EnderecosCliente (rua, cidade, cep, estado, numResidencia, Complemento, Cliente_cpf, bairro)
+VALUES ('Rua das Flores', 'São Paulo', '12345-678', 'SP', '100', 'Apto 101', '12345678901', 'Centro');
+
+-- Inserção na tabela Carrinho
+INSERT INTO Carrinho (carrinhoID, Cliente_cpf) VALUES 
+	(1, '12345678901');
+
+-- Inserção na tabela Vendas
+INSERT INTO Vendas (vendaID, valorTotal, carrinhoID) VALUES 
+	(1, 513.00, 1);
+
+-- Inserção na tabela Carrinho_has_Produtos
+INSERT INTO Carrinho_has_Produtos (Carrinho_carrinhoID, Produtos_codigoDeBarra, quantidade, total) VALUES 
+	(1, 17745, 2, 101.0),
+    (1, 110105, 2, 101.0),
+    (1, 112125, 1, 80.50),
+    (1, 113135, 1, 150.0),
+    (1, 115155, 1, 80.50);

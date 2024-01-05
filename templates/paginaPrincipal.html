@@ -103,7 +103,7 @@
                         <div class="TituloCard"><h1>{{linha['nomeProduto']}}</h1></div>
                         <figure class="imgCard"><img src="{{ url_for('static', filename='imagens/produtos/' + linha['imgMaisVendido']) }}" alt=""></figure>
                         <div class="Valor_Botao">
-                            <h1>{{linha['preco']}}</h1>
+                            <h1>R${{linha['preco']}}</h1>
                             <button onclick="window.location.href='/BlushGlamour-carrinho'" >Eu quero!</button>
                         </div> 
                     </div>
