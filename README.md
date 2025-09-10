@@ -1,6 +1,31 @@
-# Projeto-BlushGlamour
-BlushGlamour é um projeto escolar inovador que combina a criação de uma loja de maquiagem online com o conhecimento em Banco de Dados e Autoria Web. Essa plataforma não apenas oferece uma ampla gama de produtos de beleza, mas também utiliza técnicas avançadas de Banco de Dados para aprimorar a experiência do usuário. Com recursos de personalização, recomendações inteligentes e uma interface web intuitiva, BlushGlamour não é apenas uma loja de maquiagem, é uma fusão entre a beleza, a tecnologia web e a gestão eficaz de dados para oferecer uma experiência de compra personalizada e atraente.
+# 💄 Loja Online de Maquiagem
 
-Link do Slide: https://www.canva.com/design/DAF2xlLUu_g/uvkuzoVLRBL5AfEU4BRy-A/edit?utm_content=DAF2xlLUu_g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+[![Status](https://img.shields.io/badge/Status-Concluído-brightgreen?style=flat-square)]()
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=flat-square)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-000?logo=flask&logoColor=fff&style=flat-square)](https://flask.palletsprojects.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=fff&style=flat-square)](https://www.mysql.com/)
 
-Wireframe: https://www.figma.com/file/cVIymVLGP8qJT5cz6ZxfGu/wireframe?type=design&mode=design
+---
+
+## 📌 Sobre o Projeto
+Este projeto tem como finalidade **simular uma loja online de maquiagem**, permitindo que usuários explorem produtos e vivenciem a experiência de navegação em um e-commerce.  
+
+O sistema foi construído com foco em **interatividade, design responsivo e integração de back-end com banco de dados**.  
+
+---
+
+## 🚀 Tecnologias Utilizadas
+- **HTML5** → Estrutura semântica e moderna  
+- **CSS3** → Estilização responsiva e design atraente  
+- **JavaScript (Vanilla)** → Interatividade no front-end  
+- **Python + Flask** → Lógica e API para simulação do e-commerce  
+- **MySQL** → Banco de dados para armazenamento das informações  
+
+---
+
+## 🔗 Repositório
+👉 [**Acesse o projeto no GitHub**](https://github.com/gilbran-ifrn/enapne)
+
