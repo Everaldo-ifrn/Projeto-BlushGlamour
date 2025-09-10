@@ -25,7 +25,3 @@ O sistema foi construído com foco em **interatividade, design responsivo e inte
 - **MySQL** → Banco de dados para armazenamento das informações  
 
 ---
-
-## 🔗 Repositório
-👉 [**Acesse o projeto no GitHub**](https://github.com/gilbran-ifrn/enapne)
-
